@@ -42,6 +42,7 @@ namespace MasterProgram
         public static string[] location100 = new string[10];
         public static string[] location110 = new string[10];
         public static string[] location120 = new string[10];
+        public static string[] location1n10 = new string[10];
 
 
 
@@ -140,6 +141,11 @@ namespace MasterProgram
             {
                 location120[i] = sr.ReadLine();
             }
+            separator = sr.ReadLine();//ITEMS LOCATION 1n10
+            for (int i = 0; i < location1n10.Length; i++)
+            {
+                location1n10[i] = sr.ReadLine();
+            }
             sr.Close();
         }  //This method must be updated every time a new location is created
         public static void ReadingSavedGameSettings()
@@ -212,6 +218,11 @@ namespace MasterProgram
             {
                 location120[i] = sr.ReadLine();
             }
+            separator = sr.ReadLine();//ITEMS LOCATION 1n10
+            for (int i = 0; i < location1n10.Length; i++)
+            {
+                location1n10[i] = sr.ReadLine();
+            }
             sr.Close();
         }  //This method must be updated every time a new location is created
         public static void SaveGame(string answer)
@@ -283,6 +294,11 @@ namespace MasterProgram
                 for (int i = 0; i < location120.Length; i++)
                 {
                     sw.WriteLine(location120[i]);
+                }
+                sw.WriteLine("LOCATION 1n10 South Exit");
+                for (int i = 0; i < location1n10.Length; i++)
+                {
+                    sw.WriteLine(location1n10[i]);
                 }
                 sw.WriteLine("Placeholder");
                 sw.Close();
@@ -834,7 +850,9 @@ namespace MasterProgram
                 {
                     if (savingX == 1 && savingY == -1 && savingZ == 2) //If the saved coordinates match with Elise's office coordinates then it displays that you can't go that way
                     {
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("You can't go this way\n");
+                        Console.ForegroundColor = ConsoleColor.White;
                         LoadSavedCoordinates();
                     }
                     else
@@ -909,7 +927,9 @@ namespace MasterProgram
                         }
                         else
                         {
+                            Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine("You cannot leave the building yet.\n");
+                            Console.ForegroundColor = ConsoleColor.Gray;
                             LoadSavedCoordinates();
                         }
                     }
@@ -920,32 +940,61 @@ namespace MasterProgram
                     SavingCoordinates();
                     Console.WriteLine("You are in location 120");
                     CommandAnalysis(location100);
-                }//LOCATION 110 OUTSIDE OF D BLOCK
-                //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                }//LOCATION 120
+                 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                else if (x == 1 && y == -1 && z == 0) //LOCATION 1n10 South Exit of D BLOCK
+                {
+                    if (x == 1 && y == 1 && z == 0)
+                    {
+                        
+                        Console.WriteLine("You can't go this way\n");
+                        LoadSavedCoordinates();
+                    }
+                    else
+                    {
+                        if(messageSeen)
+                        {
+                            SavingCoordinates();
+                            Console.WriteLine("You're south of the D Block. \nYou are not safe anymore");
+                            CommandAnalysis(location1n10);
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("You cannot leave the building yet.\n");
+                            Console.ForegroundColor = ConsoleColor.Gray;
+                            LoadSavedCoordinates();
+
+                        }
+                    }
+                }
 
 
                 //RED ZONES SECOND FLOOR DBLOCK
-                else if (x == 0 && y == 1 && z == 1) { Console.WriteLine("You can't go this way\n"); LoadSavedCoordinates(); }  //0,1,1
-                else if (x == -1 && y == 0 && z == 1) { Console.WriteLine("You can't go this way\n"); LoadSavedCoordinates(); } //-1,0,1
-                else if (x == 0 && y == -1 && z == 1) { Console.WriteLine("You can't go this way\n"); LoadSavedCoordinates(); } //0,-1,1
-                else if (x == 1 && y == -2 && z == 1) { Console.WriteLine("You can't go this way\n"); LoadSavedCoordinates(); } //1,-2,1
-                else if (x == 2 && y == 0 && z == 1) { Console.WriteLine("You can't go this way\n"); LoadSavedCoordinates(); } //2,0,1
-                else if (x == 2 && y == -1 && z == 1) { Console.WriteLine("You can't go this way\n"); LoadSavedCoordinates(); } //2,-1,1
-                else if (x == 1 && y == 2 && z == 1) { Console.WriteLine("You can't go this way\n"); LoadSavedCoordinates(); } //1,2,1
-                else if (x == 2 && y == 1 && z == 1) { Console.WriteLine("You can't go this way\n"); LoadSavedCoordinates(); } //2,1,1
+
+                //Console.ForegroundColor = ConsoleColor.Red;
+
+                else if (x == 0 && y == 1 && z == 1) { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("You can't go this way\n"); LoadSavedCoordinates();Console.ForegroundColor = ConsoleColor.Gray; }  //0,1,1
+                else if (x == -1 && y == 0 && z == 1) { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("You can't go this way\n"); LoadSavedCoordinates(); Console.ForegroundColor = ConsoleColor.Gray; } //-1,0,1
+                else if (x == 0 && y == -1 && z == 1) { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("You can't go this way\n"); LoadSavedCoordinates(); Console.ForegroundColor = ConsoleColor.Gray; } //0,-1,1
+                else if (x == 1 && y == -2 && z == 1) { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("You can't go this way\n"); LoadSavedCoordinates(); Console.ForegroundColor = ConsoleColor.Gray; } //1,-2,1
+                else if (x == 2 && y == 0 && z == 1) { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("You can't go this way\n"); LoadSavedCoordinates(); Console.ForegroundColor = ConsoleColor.Gray; } //2,0,1
+                else if (x == 2 && y == -1 && z == 1) { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("You can't go this way\n"); LoadSavedCoordinates(); Console.ForegroundColor = ConsoleColor.Gray; } //2,-1,1
+                else if (x == 1 && y == 2 && z == 1) { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("You can't go this way\n"); LoadSavedCoordinates(); Console.ForegroundColor = ConsoleColor.Gray; } //1,2,1
+                else if (x == 2 && y == 1 && z == 1) { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("You can't go this way\n"); LoadSavedCoordinates(); Console.ForegroundColor = ConsoleColor.Gray; } //2,1,1
 
                 //RED ZONES THIRD FLOOR DBLOCK
-                else if (x == 1 && y == 1 && z == 2) { Console.WriteLine("You can't go this way\n"); LoadSavedCoordinates(); }  //1,1,2
-                else if (x == 0 && y == 0 && z == 2) { Console.WriteLine("You can't go this way\n"); LoadSavedCoordinates(); }  //0,0,2
-                else if (x == 2 && y == 0 && z == 2) { Console.WriteLine("You can't go this way\n"); LoadSavedCoordinates(); }  //2,0,2
-                else if (x == 0 && y == -1 && z == 2) { Console.WriteLine("You can't go this way\n"); LoadSavedCoordinates(); }  //0,-1,2
-                else if (x == 2 && y == -1 && z == 2) { Console.WriteLine("You can't go this way\n"); LoadSavedCoordinates(); }  //2,-1,2
-                else if (x == 1 && y == -2 && z == 2) { Console.WriteLine("You can't go this way\n"); LoadSavedCoordinates(); }  //1,-2,2
+                else if (x == 0 && y == 0 && z == 2) { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("You can't go this way\n"); LoadSavedCoordinates(); Console.ForegroundColor = ConsoleColor.Gray; }  //0,0,2
+                else if (x == 2 && y == 0 && z == 2) { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("You can't go this way\n"); LoadSavedCoordinates(); Console.ForegroundColor = ConsoleColor.Gray; }  //2,0,2
+                else if (x == 1 && y == 1 && z == 2) { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("You can't go this way\n"); LoadSavedCoordinates(); Console.ForegroundColor = ConsoleColor.Gray; }  //1,1,2
+                else if (x == 0 && y == -1 && z == 2) { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("You can't go this way\n"); LoadSavedCoordinates(); Console.ForegroundColor = ConsoleColor.Gray; }  //0,-1,2
+                else if (x == 2 && y == -1 && z == 2) { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("You can't go this way\n"); LoadSavedCoordinates(); Console.ForegroundColor = ConsoleColor.Gray; }  //2,-1,2
+                else if (x == 1 && y == -2 && z == 2) { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("You can't go this way\n"); LoadSavedCoordinates(); Console.ForegroundColor = ConsoleColor.Gray; }  //1,-2,2
 
                 //RED ZONES FIRST FLOOR D BLOCK
-                else if (x == 2 && y == 0 && z == 0) { Console.WriteLine("You can't go this way\n"); LoadSavedCoordinates(); }
-                else if (x == 1 && y == -1 && z == 0) { Console.WriteLine("You can't go this way\n"); LoadSavedCoordinates(); }
-                else if (x == 0 && y == 0 && z == 0) { Console.WriteLine("You can't go this way\n"); LoadSavedCoordinates(); }
+                else if (x == 2 && y == 0 && z == 0) { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("You can't go this way\n"); LoadSavedCoordinates(); Console.ForegroundColor = ConsoleColor.Gray; }
+                else if (x == 1 && y == -1 && z == 0) { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("You can't go this way\n"); LoadSavedCoordinates(); Console.ForegroundColor = ConsoleColor.Gray; }
+                else if (x == 0 && y == 0 && z == 0) { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("You can't go this way\n"); LoadSavedCoordinates(); Console.ForegroundColor = ConsoleColor.Gray; }
             }
         }
         public static void decisionRoutes()
@@ -969,6 +1018,7 @@ namespace MasterProgram
         }
         static void Main()
         {
+            Console.SetWindowSize(160, 40);
             Console.WriteLine("New Game press 1");
             Console.WriteLine("Resume Game press 2");
             Console.Write("Answer: ");
