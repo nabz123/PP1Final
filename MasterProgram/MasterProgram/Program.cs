@@ -767,6 +767,23 @@ namespace MasterProgram
                     break;
             }
         }
+        public static void Help(string answer)
+        {
+
+            switch (answer)
+            {
+                case "help":
+                case "info":
+                    Console.WriteLine("To move you can use 'North', 'South', 'East', 'West', 'Up', and 'Down'");
+                    Console.WriteLine("You can also use abreviated terms like 'n' for North and 'd' for Down");
+                    Console.WriteLine("To look at your inventory you can use 'inventory' or 'i' ");
+                    Console.WriteLine("You can use 'save' to save your progress, and you can use 'exit' to close the game");
+                    Console.WriteLine("And finally you can use words like 'get' and 'grab' to pick up items that are in the rooms");
+                    anythingElseCondition = false;
+                    break;
+            }
+
+        }
         public static void AnythingElse()
         {
             int randomNumber = rand.Next(4);
@@ -782,6 +799,7 @@ namespace MasterProgram
             //Methods
             DisplayCoordinates(answer);
             ExitGame(answer);
+            Help(answer);
             Navigation(answer);
             LookingAround(answer, location);
             ItemDetails(answer, location);
