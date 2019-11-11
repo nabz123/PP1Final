@@ -2,30 +2,18 @@ Coordinates
 0
 0
 1
-Booleans
-true
-false
-false
-true
-false
-false
-false
-false
-false
-false
 Inventory
-
-
-
-
-
-
+phone
+photo
+cv
+documents
+keys
+charger
 
 
 
 
 LOCATION 001 D201
-keys
 phone
 
 
@@ -35,8 +23,9 @@ phone
 
 
 
+
 LOCATION 101 OUTSIDE D201
-bottle
+
 
 
 
@@ -47,7 +36,7 @@ bottle
 
 
 LOCATION 1n11 COMMON ROOM
-charger
+
 
 
 
@@ -59,7 +48,7 @@ charger
 
 LOCATION 111 ROB
 photo
-
+charger
 
 
 
@@ -123,171 +112,26 @@ LOCATION 120
 
 
 
+LOCATION 1n10 South Exit
+
+
+
+
+
+
+
+
+
+
+LOCATION 202 SERVER ROOM
+
+
+
+
+
+
+
+
+
+
 Placeholder
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-LINE NUMBER 200
-

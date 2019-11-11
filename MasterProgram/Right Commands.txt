@@ -1,0 +1,29 @@
+old path
+GET THE PHONE AND THE CHARGER
+GO TO COMMON ROOM AND CHARGE IT
+TURN IT ON
+
+new path (COMMANDS)
+east
+up
+south
+inspect corpse
+take keys
+north
+down
+open door
+south
+north
+up
+south
+inspect desk
+inspect documents
+north
+down
+south
+qwerty
+
+
+
+
+

@@ -29,17 +29,26 @@ discard
 remove
 inspect
 examine
+help
+info
 use
 utilize
 turn on
 power on
+unlock/open door
+inspect corpse/desk
 love
 nothing
 keys (can be used)
-bottle (can be filled)
 phone (can be lamp / take selfie)
 photo
 charger
+documents
+cv/curriculum/resume
+run/ run away
+escape
+extinguish/extinguisher
+
 
 YET TO IMPLEMENT:
 map
