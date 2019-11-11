@@ -38,6 +38,9 @@ namespace MasterProgram
 		public static string[] location0n20 = new string[10];
 		public static string[] location1n40 = new string[10];
 		public static string[] location2n30 = new string[10];
+		public static string[] location2n20 = new string[10];
+		public static string[] location1n30 = new string[10];
+		public static string[] location1n20= new string[10];
 
 		//LOCATION BOOLEANS
 		public static bool Bill = false, Francisco = false, Mitchell = false, Nabeel = false; // These values decide the route of the game
@@ -147,7 +150,32 @@ namespace MasterProgram
             {
                 location202[i] = sr.ReadLine();
             }
-            sr.Close();
+			separator = sr.ReadLine();//ITEMS LOCATION 1n20
+			for (int i = 0; i < location1n20.Length; i++)
+			{
+				location1n20[i] = sr.ReadLine();
+			}
+			separator = sr.ReadLine();//ITEMS LOCATION 1n30
+			for (int i = 0; i < location1n30.Length; i++)
+			{
+				location1n30[i] = sr.ReadLine();
+			}
+			separator = sr.ReadLine();//ITEMS LOCATION 2n20
+			for (int i = 0; i < location2n20.Length; i++)
+			{
+				location2n20[i] = sr.ReadLine();
+			}
+			separator = sr.ReadLine();//ITEMS LOCATION 1n30
+			for (int i = 0; i < location0n20.Length; i++)
+			{
+				location0n20[i] = sr.ReadLine();
+			}
+			separator = sr.ReadLine();//ITEMS LOCATION 1n40
+			for (int i = 0; i < location1n40.Length; i++)
+			{
+				location1n40[i] = sr.ReadLine();
+			}
+			sr.Close();
 
             //BOOLEANS
             StreamReader zr = new StreamReader("newGameBooleans.txt");
@@ -345,7 +373,32 @@ namespace MasterProgram
                 {
                     sw.WriteLine(location202[i]);
                 }
-                sw.WriteLine("Placeholder");
+				sw.WriteLine("LOCATION 1n20 Harbor Terrace");
+				for (int i = 0; i < location1n20.Length; i++)
+				{
+					sw.WriteLine(location1n20[i]);
+				}
+				sw.WriteLine("LOCATION 2n20 Harbor Terrace");
+				for (int i = 0; i < location2n20.Length; i++)
+				{
+					sw.WriteLine(location1n20[i]);
+				}
+				sw.WriteLine("LOCATION 0n20 Harbor Terrace");
+				for (int i = 0; i < location0n20.Length; i++)
+				{
+					sw.WriteLine(location1n20[i]);
+				}
+				sw.WriteLine("LOCATION 1n30 Manaaki Car Park");
+				for (int i = 0; i < location1n30.Length; i++)
+				{
+					sw.WriteLine(location1n20[i]);
+				}
+				sw.WriteLine("LOCATION 1n40 Dark alley");
+				for (int i = 0; i < location1n40.Length; i++)
+				{
+					sw.WriteLine(location1n40[i]);
+				}
+				sw.WriteLine("Placeholder");
                 sw.Close();
 
                 //BOOLEANS
@@ -1176,18 +1229,26 @@ namespace MasterProgram
         //MAIN GAME
         public static void MainGAME(int inputFromMenu)
         {
-            if (inputFromMenu == 1) ReadingNewGameSettings();    // NEW GAME
-            if (inputFromMenu == 2) ReadingSavedGameSettings();  // RESUME GAME
+			if (inputFromMenu == 1) ReadingNewGameSettings();    // NEW GAME
+			if (inputFromMenu == 2) ReadingSavedGameSettings();  // RESUME GAME
+			if (inputFromMenu == 3) Credits();              //Instructions
+			if (inputFromMenu == 4) ExitGame();                  //Exit Game
 
-            //READING RED ZONES
-            StreamReader sr = new StreamReader("RedZones.txt");
+			//READING RED ZONES
+			StreamReader sr = new StreamReader("RedZones.txt");
             string RedZoneCoordinates = sr.ReadToEnd();
             sr.Close();
 
-            //INSTRUCTIONS
-            Console.WriteLine("SEVERAL LINES WITH INSTRUCTIONS IN THIS PART");
+			//INSTRUCTIONS
+			//Console.WriteLine("SEVERAL LINES WITH INSTRUCTIONS IN THIS PART");
+			Console.WriteLine("\n\t\t\tYou are to navigate your way through");
+			Console.WriteLine("\t\t\tthe zombie apocalypse. To do so you must");
+			Console.WriteLine("\t\t\tsearch for items that are spread out around ");
+			Console.WriteLine("\t\t\t(Dunedin or world). Basic commands are");
+			Console.WriteLine("\t\t\tN,E,S & W, your job is to figure out the rest.");
+			Console.WriteLine("\t\t\tGood Luck");
 
-            Console.Write("Press enter to start:");
+			Console.Write("Press enter to start:");
             Console.ReadLine();
             Console.Clear();
 
@@ -1442,9 +1503,41 @@ namespace MasterProgram
                     }
                     x = 1; y = 0; z = 2; //STAIRS THIRD FLOOR
                 }//LOCATION 202 SERVER ROOM
+				else if (x == 1 && y == -2 && z == 0) // 1N20 HARBOUR TERRACE
+				{
+					SavingCoordinates();
+					Console.WriteLine("Be carefull you are now on the Harbour Terrace St");
+					CommandAnalysis(location1n20);
+				}//LOCATION 1n20/////////////////////////////////////////////////////////////////////////////////////////////////
+				 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+				 ///
+				else if (x == 1 && y == -2 && z == 0) // 2N20 HARBOUR TERRACE
+				{
+					SavingCoordinates();
+					Console.WriteLine("You are now on the Harbour Terrace St");
+					CommandAnalysis(location2n20);
+				}//LOCATION 2n20/////////////////////////////////////////////////////////////////////////////////////////////////
+				 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+				 ///
 
-                //RED ZONES
-                else if (RedZoneCoordinates.Contains($"{x},{y},{z}")) { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("You can't go this way\n"); LoadSavedCoordinates(); Console.ForegroundColor = ConsoleColor.Gray; }
+				else if (x == 1 && y == -3 && z == 0) // 1N30 HARBOUR TERRACE 
+				{
+					SavingCoordinates();
+					Console.WriteLine("You are approuching Manaaki's car park");
+					CommandAnalysis(location1n30);
+				}//LOCATION 1n30/////////////////////////////////////////////////////////////////////////////////////////////////
+				 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+				 ///
+				else if (x == 1 && y == -4 && z == 0) // 1N40 HARBOUR TERRACE 
+				{
+					SavingCoordinates();
+					Console.WriteLine("You are in a dark alley that leads you to an abandoned");
+					CommandAnalysis(location1n40);
+				}//LOCATION 1n40/////////////////////////////////////////////////////////////////////////////////////////////////
+				 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+				 ///
+				//RED ZONES
+				else if (RedZoneCoordinates.Contains($"{x},{y},{z}")) { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("You can't go this way\n"); LoadSavedCoordinates(); Console.ForegroundColor = ConsoleColor.Gray; }
             }
         }
         public static void decisionRoutes()
@@ -1466,13 +1559,35 @@ namespace MasterProgram
 
             }
         }
-        static void Main()
+		public static void Credits()
+		{
+			Console.Clear();
+			Console.WriteLine("\n\t\t\t  \n");
+			Console.WriteLine("\t\t\t  \n");
+			Console.WriteLine("\t\t\t  \n");
+			Console.WriteLine("\t\t\t  \n");
+			Console.WriteLine("\t\t\t  \n");
+			Thread.Sleep(5000);
+			Console.Clear();
+			Main();
+		}
+		public static void ExitGame()
+		{
+			Console.Clear();
+			Console.WriteLine("\t\t\tThank you for playing");
+			Thread.Sleep(2500);
+			Environment.Exit(-1);
+		}
+		static void Main()
         {
-            Console.SetWindowSize(160, 40);
-            Console.WriteLine("New Game press 1");
-            Console.WriteLine("Resume Game press 2");
-            Console.Write("Answer: ");
-            MainGAME(Convert.ToInt32(Console.ReadLine()));
-        }
+			Console.SetWindowSize(160, 40);
+			Console.WriteLine("");
+			Console.WriteLine("\t\t\t\t\t\t\t1 New Game \n");
+			Console.WriteLine("\t\t\t\t\t\t\t2 Resume \n");
+			Console.WriteLine("\t\t\t\t\t\t\t3 Credits \n");
+			Console.WriteLine("\t\t\t\t\t\t\t4 Exit \n");
+			Console.Write("\t\t\t\t\t\t       :");
+			MainGAME(Convert.ToInt32(Console.ReadLine()));
+		}
     }
 }
