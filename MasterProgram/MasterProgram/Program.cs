@@ -35,9 +35,12 @@ namespace MasterProgram
         public static string[] location120 = new string[10];
         public static string[] location1n10 = new string[10];
         public static string[] location202 = new string[10];
+		public static string[] location0n20 = new string[10];
+		public static string[] location1n40 = new string[10];
+		public static string[] location2n30 = new string[10];
 
-        //LOCATION BOOLEANS
-        public static bool Bill = false, Francisco = false, Mitchell = false, Nabeel = false; // These values decide the route of the game
+		//LOCATION BOOLEANS
+		public static bool Bill = false, Francisco = false, Mitchell = false, Nabeel = false; // These values decide the route of the game
         public static bool introduction = true;
         public static bool messageSeen = false;
         public static bool phoneCharged = false;
