@@ -15,7 +15,9 @@ namespace MasterProgram
         public static bool firstWhileCondition = true, secondWhileCondition = true, thirdWhileCondition = true, anythingElseCondition = true, zombieLoop = true, zombieBoolean = false;
         public static bool inventoryCheck = false; //Auxiliar boolean to check whether the inventory is empty or not
         public static string separator; //Helps to orginize the text files
-        
+
+        public static int food_level_current = 10; //FOOD COUNTER
+
         //COORDINATES
         public static int x = 0, y = 0, z = 0; 
         public static int savingX = 0, savingY = 0, savingZ = 0;  //SAVED COORDINATES
@@ -49,6 +51,8 @@ namespace MasterProgram
         public static bool knowingWhatIsGoingOn = false;
         public static bool firstTimeServerRoom = true;
         public static bool serverRoomLoop = true;
+        public static bool foodCurrent = false; //NEW  BOOLEAN
+        public static bool firstTimeGoingOutDBlock = true; // NEW BOOLEAN
 
 
         //METHODS
@@ -939,6 +943,8 @@ namespace MasterProgram
                     switch (answer)
                     {
                         case "keys":
+                        case "use keys":
+                        case "throw keys":
                             if (inventory.Contains("keys"))
                             {
                                 Console.WriteLine("You have no idea how to use the keys as a weapon. Hence, you throw them at the zombie.");
@@ -963,6 +969,10 @@ namespace MasterProgram
                         case "curriculum vitae":
                         case "curriculum":
                         case "resume":
+                        case "use cv":
+                        case "use curriculum vitae":
+                        case "use curriculum":
+                        case "use resume":
                             if (inventory.Contains("cv"))
                             {
                                 Console.WriteLine("You take out Elise's CV and you immediatly acquire serious levels of professionalism to get hired by any company.");
@@ -975,6 +985,7 @@ namespace MasterProgram
                             }
                             break;
                         case "documents":
+                        case "use documents":
                             if (inventory.Contains("documents"))
                             {
                                 Console.WriteLine("You take out the documents and show them to the zombie.");
@@ -994,6 +1005,8 @@ namespace MasterProgram
                             }
                             break;
                         case "phone":
+                        case "throw phone":
+                        case "use phone":
                             if (inventory.Contains("phone"))
                             {
                                 Console.WriteLine("You yolo-throw your phone at the zombie, and out of sheer luck you hit it in the head.");
@@ -1014,10 +1027,19 @@ namespace MasterProgram
                             }
                             break;
                         case "charger":
+                        case "use charger":
                             if (inventory.Contains("charger"))
                             {
-                                Console.WriteLine("You take out the charger and...Placeholder");
+                                Console.WriteLine("You take out the charger and you swing it around like a cowboy hoping that it wraps around the zombie's neck.");
+                                Console.WriteLine("Letting go of the swinging cable results in it wrapping around your own neck.");
+                                Console.WriteLine("Struggling to breathe, the zombie lashes out and pushes you to the ground.");
+                                Console.WriteLine("The zombie grabs the cable and pulls tight. Ending your life.");
                                 zombieLoop = false;
+                                zombieBoolean = true;
+                                Console.ReadLine();
+                                Console.Clear();
+                                Console.WriteLine("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\tYOU DIED. GAME OVER");
+                                Console.ReadLine();
                             }
                             else
                             {
@@ -1025,6 +1047,7 @@ namespace MasterProgram
                             }
                             break;
                         case "photo":
+                        case "use photo":
                             if (inventory.Contains("photo"))
                             {
                                 Console.WriteLine("You take out the photo and the only thing you come up with is praying for salvation.");
@@ -1067,6 +1090,22 @@ namespace MasterProgram
                     }
                 }
                 Console.WriteLine();
+            }
+        }
+        public static void foodCounter()
+        {
+            if (foodCurrent)
+            {
+                food_level_current--;
+            }
+
+            if (food_level_current == 0) //This condition forces the game to exit
+            {
+                firstWhileCondition = false;
+                Console.ReadLine();
+                Console.Clear();
+                Console.WriteLine("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\t\t   YOU DIDN'T EAT ANYTHING, YOU STARVED TO DEATH. GAME OVER");
+                Console.ReadLine();
             }
         }
         public static void ExitGame(string answer)
@@ -1120,6 +1159,10 @@ namespace MasterProgram
                     Console.WriteLine("You can use 'save' to save your progress, and you can use 'exit' to close the game.");
                     Console.WriteLine("Finally you can use words like 'get' and 'grab' to pick up any items you come accross.");
                     Console.WriteLine("Bear in mind that these are jsut a few commands, feel free to experiment.");
+                    anythingElseCondition = false;
+                    break;
+                case "food": //Developer tool to display the food counter
+                    Console.WriteLine(food_level_current);
                     anythingElseCondition = false;
                     break;
             }
@@ -1342,7 +1385,7 @@ namespace MasterProgram
                     }
                 }//LOCATION 100 FIRST FLOOR
                 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                else if (x == 1 && y == 1 && z == 0) //LOCATION 110 OUTSIDE OF D BLOCK
+                else if (x == 1 && y == 1 && z == 0) //LOCATION 110 OUTSIDE OF D BLOCK NORTH
                 {
                     if (savingX == 1 && savingY == 1 && savingZ == 1) //The location you are comming from
                     {
@@ -1355,6 +1398,13 @@ namespace MasterProgram
                         {
                             SavingCoordinates();
                             Console.WriteLine("You are outside the D block, the hostile atmosphere chills your blood.");
+                            Console.WriteLine("It's been a while since the last time you ate something. You are starting to feel extremely weak.");
+                            Console.WriteLine("If you don't find something to eat soon, you may die.");
+                            if (firstTimeGoingOutDBlock)
+                            {
+                                firstTimeGoingOutDBlock = false;
+                                foodCurrent = true;
+                            }
                             CommandAnalysis(location110);
                         }
                         else
@@ -1365,6 +1415,8 @@ namespace MasterProgram
                             LoadSavedCoordinates();
                         }
                     }
+                    foodCounter();
+
                 }//LOCATION 110 OUTSIDE OF D BLOCK NORTH
                 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 else if (x == 1 && y == 2 && z == 0) //LOCATION 120
@@ -1398,7 +1450,11 @@ namespace MasterProgram
 
                         }
                     }
-                }//LOCATION 1n10
+                    if (foodCurrent)
+                    {
+                        foodCurrent = false;
+                    }
+                }//LOCATION 1n10 OUTSIDE OF D BLOCK SOUTH
                 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 else if (x == 2 && y == 0 && z == 2) //LOCATION 202 SERVER ROOM
                 {
@@ -1422,7 +1478,7 @@ namespace MasterProgram
                             Console.WriteLine("Miraculously, you remember one answer from your NetAcademy-chapter-exam questions and you take the extinguisher, so you “aim at the base of the flame, squeeze the lever, and sweep from side to side”.");
                             Console.WriteLine("This sophisticated technique allows you to get rid of the fire and save your ass as a result.\n");
                         }
-                        else if (answer == "run" || answer == "get out" || answer == "run out" || answer == "escape")
+                        else if (answer == "run" || answer == "get out" || answer == "run out" || answer == "escape" || answer == "leave")
                         {
                             Console.WriteLine("You decide to run out of the server room but the smoke obstructs your vision and you crash into the door that you forgot you had closed before. This knocks you out and you die burnt inside the server room.");
                             serverRoomLoop = false;
