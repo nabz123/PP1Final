@@ -42,16 +42,37 @@ namespace MasterProgram
 		public static string[] location2n20 = new string[10];
 		public static string[] location1n30 = new string[10];
 		public static string[] location1n20 = new string[10];
-        //Union st
-        public static string[] locationn150 = new string[10];
+        
+        public static string[] locationn150 = new string[10]; //Union st
         public static string[] locationn140 = new string[10];
         public static string[] locationn130 = new string[10];
         public static string[] locationn120 = new string[10];
         public static string[] locationn110 = new string[10];
         public static string[] locationn100 = new string[10];
-        //ForthSt
-        public static string[] location130 = new string[10];
+        
+        public static string[] location130 = new string[10]; //ForthSt
         public static string[] location030 = new string[10];
+        
+        public static string[] location2n41 = new string[10]; //Manaaki 2nd level
+        
+        public static string[] locationn210 = new string[10]; //Library
+        //Manaaki
+        public static string[] location3n41 = new string[10];
+        public static string[] location4n41 = new string[10];
+        public static string[] location2n51 = new string[10];
+        public static string[] location3n51 = new string[10];
+        public static string[] location4n51 = new string[10];
+        public static string[] location2n61 = new string[10];
+        public static string[] location3n61 = new string[10];
+        public static string[] location4n61 = new string[10];
+        //Library
+        public static string[] locationn211 = new string[10];
+        public static string[] locationn311 = new string[10];
+        public static string[] locationn201 = new string[10];
+        public static string[] locationn301 = new string[10];
+        public static string[] locationn321 = new string[10]; //stairs
+        public static string[] locationn322 = new string[10]; //third floor
+        public static string[] locationn332 = new string[10]; //passport
 
 
         //LOCATION BOOLEANS
@@ -68,7 +89,7 @@ namespace MasterProgram
         public static bool firstTimeServerRoom = true;
         public static bool serverRoomLoop = true;
 
-
+        public static int food_level_current = 5; //FOOD COUNTER
         //METHODS
         public static void DisplayCoordinates(string answer)
         {
@@ -162,40 +183,40 @@ namespace MasterProgram
             {
                 location202[i] = sr.ReadLine();
             }
-			separator = sr.ReadLine();//ITEMS LOCATION 1n20
-			for (int i = 0; i < location1n20.Length; i++)
-			{
-				location1n20[i] = sr.ReadLine();
-			}
-			separator = sr.ReadLine();//ITEMS LOCATION 1n30
-			for (int i = 0; i < location1n30.Length; i++)
-			{
-				location1n30[i] = sr.ReadLine();
-			}
-			separator = sr.ReadLine();//ITEMS LOCATION 2n20
-			for (int i = 0; i < location2n20.Length; i++)
-			{
-				location2n20[i] = sr.ReadLine();
-			}
-			separator = sr.ReadLine();//ITEMS LOCATION 1n30
-			for (int i = 0; i < location0n20.Length; i++)
-			{
-				location0n20[i] = sr.ReadLine();
-			}
-			separator = sr.ReadLine();//ITEMS LOCATION 1n40
-			for (int i = 0; i < location1n40.Length; i++)
-			{
-				location1n40[i] = sr.ReadLine();
-			}
+            separator = sr.ReadLine();//ITEMS LOCATION 0n20
+            for (int i = 0; i < location0n20.Length; i++)
+            {
+                location0n20[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION 1n40
+            for (int i = 0; i < location1n40.Length; i++)
+            {
+                location1n40[i] = sr.ReadLine();
+            }
             separator = sr.ReadLine();//ITEMS LOCATION 2n40
             for (int i = 0; i < location2n40.Length; i++)
             {
                 location2n40[i] = sr.ReadLine();
             }
+            separator = sr.ReadLine();//ITEMS LOCATION 2n20
+            for (int i = 0; i < location2n20.Length; i++)
+            {
+                location2n20[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION 1n30
+            for (int i = 0; i < location1n30.Length; i++)
+            {
+                location1n30[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION 1n20
+            for (int i = 0; i < location1n20.Length; i++)
+            {
+                location1n20[i] = sr.ReadLine();
+            }
             separator = sr.ReadLine();//ITEMS LOCATION n150
             for (int i = 0; i < locationn150.Length; i++)
             {
-                locationn150[i] = sr.ReadLine(); 
+                locationn150[i] = sr.ReadLine();
             }
             separator = sr.ReadLine();//ITEMS LOCATION n140
             for (int i = 0; i < locationn140.Length; i++)
@@ -231,6 +252,96 @@ namespace MasterProgram
             for (int i = 0; i < location030.Length; i++)
             {
                 location030[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION 030
+            for (int i = 0; i < location2n41.Length; i++)
+            {
+                location2n41[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION 030
+            for (int i = 0; i < locationn210.Length; i++)
+            {
+                locationn210[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION 3n41
+            for (int i = 0; i < location3n41.Length; i++)
+            {
+                location3n41[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION 4n41
+            for (int i = 0; i < location4n41.Length; i++)
+            {
+                location4n41[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION 2n51
+            for (int i = 0; i < location2n51.Length; i++)
+            {
+                location2n51[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION 3n51
+            for (int i = 0; i < location3n51.Length; i++)
+            {
+                location3n51[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION 4n51
+            for (int i = 0; i < location4n51.Length; i++)
+            {
+                location4n51[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION 4n51
+            for (int i = 0; i < location2n61.Length; i++)
+            {
+                location2n61[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION 3n61
+            for (int i = 0; i < location3n61.Length; i++)
+            {
+                location3n61[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION 4n61
+            for (int i = 0; i < location4n61.Length; i++)
+            {
+                location4n61[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION n211
+            for (int i = 0; i < locationn211.Length; i++)
+            {
+                locationn211[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION n311
+            for (int i = 0; i < locationn311.Length; i++)
+            {
+                locationn311[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION n201
+            for (int i = 0; i < locationn201.Length; i++)
+            {
+                locationn201[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION n301
+            for (int i = 0; i < locationn301.Length; i++)
+            {
+                locationn301[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION n301
+            for (int i = 0; i < locationn321.Length; i++)
+            {
+                locationn321[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION n301
+            for (int i = 0; i < locationn321.Length; i++)
+            {
+                locationn321[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION n322
+            for (int i = 0; i < locationn322.Length; i++)
+            {
+                locationn322[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION n332
+            for (int i = 0; i < locationn332.Length; i++)
+            {
+                locationn332[i] = sr.ReadLine();
             }
             sr.Close();
 
@@ -330,22 +441,7 @@ namespace MasterProgram
             {
                 location202[i] = sr.ReadLine();
             }
-            separator = sr.ReadLine();//ITEMS LOCATION 1n20
-            for (int i = 0; i < location1n20.Length; i++)
-            {
-                location1n20[i] = sr.ReadLine();
-            }
-            separator = sr.ReadLine();//ITEMS LOCATION 1n30
-            for (int i = 0; i < location1n30.Length; i++)
-            {
-                location1n30[i] = sr.ReadLine();
-            }
-            separator = sr.ReadLine();//ITEMS LOCATION 2n20
-            for (int i = 0; i < location2n20.Length; i++)
-            {
-                location2n20[i] = sr.ReadLine();
-            }
-            separator = sr.ReadLine();//ITEMS LOCATION 1n30
+            separator = sr.ReadLine();//ITEMS LOCATION 0n20
             for (int i = 0; i < location0n20.Length; i++)
             {
                 location0n20[i] = sr.ReadLine();
@@ -359,6 +455,21 @@ namespace MasterProgram
             for (int i = 0; i < location2n40.Length; i++)
             {
                 location2n40[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION 2n20
+            for (int i = 0; i < location2n20.Length; i++)
+            {
+                location2n20[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION 1n30
+            for (int i = 0; i < location1n30.Length; i++)
+            {
+                location1n30[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION 1n20
+            for (int i = 0; i < location1n20.Length; i++)
+            {
+                location1n20[i] = sr.ReadLine();
             }
             separator = sr.ReadLine();//ITEMS LOCATION n150
             for (int i = 0; i < locationn150.Length; i++)
@@ -399,6 +510,96 @@ namespace MasterProgram
             for (int i = 0; i < location030.Length; i++)
             {
                 location030[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION 030
+            for (int i = 0; i < location2n41.Length; i++)
+            {
+                location2n41[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION 030
+            for (int i = 0; i < locationn210.Length; i++)
+            {
+                locationn210[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION 3n41
+            for (int i = 0; i < location3n41.Length; i++)
+            {
+                location3n41[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION 4n41
+            for (int i = 0; i < location4n41.Length; i++)
+            {
+                location4n41[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION 2n51
+            for (int i = 0; i < location2n51.Length; i++)
+            {
+                location2n51[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION 3n51
+            for (int i = 0; i < location3n51.Length; i++)
+            {
+                location3n51[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION 4n51
+            for (int i = 0; i < location4n51.Length; i++)
+            {
+                location4n51[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION 4n51
+            for (int i = 0; i < location2n61.Length; i++)
+            {
+                location2n61[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION 3n61
+            for (int i = 0; i < location3n61.Length; i++)
+            {
+                location3n61[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION 4n61
+            for (int i = 0; i < location4n61.Length; i++)
+            {
+                location4n61[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION n211
+            for (int i = 0; i < locationn211.Length; i++)
+            {
+                locationn211[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION n311
+            for (int i = 0; i < locationn311.Length; i++)
+            {
+                locationn311[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION n201
+            for (int i = 0; i < locationn201.Length; i++)
+            {
+                locationn201[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION n301
+            for (int i = 0; i < locationn301.Length; i++)
+            {
+                locationn301[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION n301
+            for (int i = 0; i < locationn321.Length; i++)
+            {
+                locationn321[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION n301
+            for (int i = 0; i < locationn321.Length; i++)
+            {
+                locationn321[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION n322
+            for (int i = 0; i < locationn322.Length; i++)
+            {
+                locationn322[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION n332
+            for (int i = 0; i < locationn332.Length; i++)
+            {
+                locationn332[i] = sr.ReadLine();
             }
             sr.Close();
 
@@ -500,70 +701,85 @@ namespace MasterProgram
                 {
                     sw.WriteLine(location202[i]);
                 }
-				sw.WriteLine("LOCATION 1n20 Harbor Terrace");
-				for (int i = 0; i < location1n20.Length; i++)
-				{
-					sw.WriteLine(location1n20[i]);
-				}
-				sw.WriteLine("LOCATION 2n20 Harbor Terrace");
-				for (int i = 0; i < location2n20.Length; i++)
-				{
-					sw.WriteLine(location1n20[i]);
-				}
-				sw.WriteLine("LOCATION 0n20 Harbor Terrace");
-				for (int i = 0; i < location0n20.Length; i++)
-				{
-					sw.WriteLine(location1n20[i]);
-				}
-				sw.WriteLine("LOCATION 1n30 Manaaki Car Park");
-				for (int i = 0; i < location1n30.Length; i++)
-				{
-					sw.WriteLine(location1n20[i]);
-				}
-				sw.WriteLine("LOCATION 1n40 Dark alley");
-				for (int i = 0; i < location1n40.Length; i++)
-				{
-					sw.WriteLine(location1n40[i]);
-				}
-                sw.WriteLine("LOCATION n150 Dark alley");
+                sw.WriteLine("LOCATION 0n20 SERVER ROOM");
+                for (int i = 0; i < location0n20.Length; i++)
+                {
+                    sw.WriteLine(location0n20[i]);
+                }
+                sw.WriteLine("LOCATION 1n40 Harbour Terrace");
+                for (int i = 0; i < location1n40.Length; i++)
+                {
+                    sw.WriteLine(location1n40[i]);
+                }
+                sw.WriteLine("LOCATION 2n40 Manaaki");
+                for (int i = 0; i < location2n40.Length; i++)
+                {
+                    sw.WriteLine(location2n40[i]);
+                }
+                sw.WriteLine("LOCATION 2n20 Harbour Terrace");
+                for (int i = 0; i < location2n20.Length; i++)
+                {
+                    sw.WriteLine(location2n20[i]);
+                }
+                sw.WriteLine("LOCATION 1n30 Parking");
+                for (int i = 0; i < location1n30.Length; i++)
+                {
+                    sw.WriteLine(location1n30[i]);
+                }
+                sw.WriteLine("LOCATION 1n20 Harbour Terrace");
+                for (int i = 0; i < location1n20.Length; i++)
+                {
+                    sw.WriteLine(location1n20[i]);
+                }
+                sw.WriteLine("LOCATION n150 Uni");
                 for (int i = 0; i < locationn150.Length; i++)
                 {
                     sw.WriteLine(locationn150[i]);
                 }
-                sw.WriteLine("LOCATION n140 Dark alley");
+                sw.WriteLine("LOCATION n140 Union St");
                 for (int i = 0; i < locationn140.Length; i++)
                 {
                     sw.WriteLine(locationn140[i]);
                 }
-                sw.WriteLine("LOCATION n130 Dark alley");
+                sw.WriteLine("LOCATION n130 Union St");
                 for (int i = 0; i < locationn130.Length; i++)
                 {
                     sw.WriteLine(locationn130[i]);
                 }
-                sw.WriteLine("LOCATION n120 Dark alley");
+                sw.WriteLine("LOCATION n120 Union St");
                 for (int i = 0; i < locationn120.Length; i++)
                 {
                     sw.WriteLine(locationn120[i]);
                 }
-                sw.WriteLine("LOCATION n110 Dark alley");
+                sw.WriteLine("LOCATION n110 Union St");
                 for (int i = 0; i < locationn110.Length; i++)
                 {
                     sw.WriteLine(locationn110[i]);
                 }
-                sw.WriteLine("LOCATION n100 Dark alley");
+                sw.WriteLine("LOCATION n100 Union St");
                 for (int i = 0; i < locationn100.Length; i++)
                 {
                     sw.WriteLine(locationn100[i]);
                 }
-                sw.WriteLine("LOCATION 130 Dark alley");
+                sw.WriteLine("LOCATION 130 Forth St");
                 for (int i = 0; i < location130.Length; i++)
                 {
                     sw.WriteLine(location130[i]);
                 }
-                sw.WriteLine("LOCATION 030 Dark alley");
+                sw.WriteLine("LOCATION 030 Forth St");
                 for (int i = 0; i < location030.Length; i++)
                 {
                     sw.WriteLine(location030[i]);
+                }
+                sw.WriteLine("LOCATION 2n41 Manaaki level 2");
+                for (int i = 0; i < location2n41.Length; i++)
+                {
+                    sw.WriteLine(location2n41[i]);
+                }
+                sw.WriteLine("LOCATION n210 Library");
+                for (int i = 0; i < locationn210.Length; i++)
+                {
+                    sw.WriteLine(locationn210[i]);
                 }
                 sw.WriteLine("Placeholder");
                 sw.Close();
@@ -747,6 +963,26 @@ namespace MasterProgram
                         else if (randomNumber == 1) Console.WriteLine("There is a charger on the floor here");
                         else if (randomNumber == 2) Console.WriteLine("There is a charger on the ground here");
                         else if (randomNumber == 3) Console.WriteLine("You can see a charger here");
+                    }
+                    if (location.Contains("V"))
+                    {
+                        //Generic Description
+                        int randomNumber = rand.Next(4);
+                        if (randomNumber == 0) Console.WriteLine("There is a V nearby");
+                        else if (randomNumber == 1) Console.WriteLine("There is a V on the floor here");
+                        else if (randomNumber == 2) Console.WriteLine("There is a V on the ground here");
+                        else if (randomNumber == 3) Console.WriteLine("You can see a V here");
+
+                    }
+                    if (location.Contains("passport"))
+                    {
+                        //Generic Description
+                        int randomNumber = rand.Next(4);
+                        if (randomNumber == 0) Console.WriteLine("There is a passport nearby");
+                        else if (randomNumber == 1) Console.WriteLine("There is a passport on the floor here");
+                        else if (randomNumber == 2) Console.WriteLine("There is a passport on the ground here");
+                        else if (randomNumber == 3) Console.WriteLine("You can see a passport here");
+
                     }
                     //COMPUTER
                     if ((x == 1 && y == -1 && z == 1) && secondTimeEliseOffice)
@@ -1139,6 +1375,18 @@ namespace MasterProgram
                 else Console.WriteLine("You need a working computer to enter your password");
                 anythingElseCondition = false;
             }
+            if (answer=="drink V")
+            {
+                if (inventory.Contains("V"))
+                {
+                    Console.WriteLine("You have extended your life span");
+                    food_level_current = food_level_current + 5;
+                }
+                else
+                {
+                    Console.WriteLine("You dont have this item");
+                }
+            }
         }
         public static void ZombieAttack()
         {
@@ -1375,6 +1623,7 @@ namespace MasterProgram
             DisplayInventory(answer);
             SpecialInputs(answer);
             SaveGame(answer);
+            Omnipresent(answer);
             WAT(answer);
         }
         public static void CommandAnalysis(string[] location)
@@ -1686,7 +1935,6 @@ namespace MasterProgram
 				}//LOCATION 2n20/////////////////////////////////////////////////////////////////////////////////////////////////
 				 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 				 ///
-
 				else if (x == 1 && y == -3 && z == 0) // 1N30 HARBOUR TERRACE 
 				{
 					SavingCoordinates();
@@ -1698,30 +1946,28 @@ namespace MasterProgram
 				else if (x == 1 && y == -4 && z == 0) // 1N40 HARBOUR TERRACE 
 				{
 					SavingCoordinates();
-					Console.WriteLine("You are on Harbour Terrace");
+					Console.WriteLine("You are in a dark alley leading you toward Manaaki");
 					CommandAnalysis(location1n40);
 				}//LOCATION 1n40/////////////////////////////////////////////////////////////////////////////////////////////////
                  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                  ///
-                
-
-                else if (x == -1 && y == 5 && z == 0) // n150 HARBOUR TERRACE 
+                else if (x == -1 && y == 5 && z == 0) // n150 UNI
                 {
                     SavingCoordinates();
-                    Console.WriteLine("You are on Unions St");
+                    Console.WriteLine("You are at Uni ");
                     CommandAnalysis(locationn150);
                 }//LOCATION n150/////////////////////////////////////////////////////////////////////////////////////////////////
                  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                  ///
-                else if (x == -1 && y == 4 && z == 0) // n140 HARBOUR TERRACE 
+                else if (x == -1 && y == 4 && z == 0) // n140 Gate before uni
                 {
                     SavingCoordinates();
-                    Console.WriteLine("You are on Unions St");
+                    Console.WriteLine("You have reached a gate");
                     CommandAnalysis(locationn140);
                 }//LOCATION n140/////////////////////////////////////////////////////////////////////////////////////////////////
                  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                  ///
-                else if (x == -1 && y == 3 && z == 0) // n130 HARBOUR TERRACE 
+                else if (x == -1 && y == 3 && z == 0) // n130 Unions St
                 {
                     SavingCoordinates();
                     Console.WriteLine("You are on Unions St");
@@ -1729,7 +1975,7 @@ namespace MasterProgram
                 }//LOCATION n130/////////////////////////////////////////////////////////////////////////////////////////////////
                  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                  ///
-                else if (x == -1 && y == 2 && z == 0) // n120 HARBOUR TERRACE 
+                else if (x == -1 && y == 2 && z == 0) // n120 Unions St 
                 {
                     SavingCoordinates();
                     Console.WriteLine("You are on Unions St");
@@ -1737,7 +1983,7 @@ namespace MasterProgram
                 }//LOCATION n120/////////////////////////////////////////////////////////////////////////////////////////////////
                  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                  ///
-                else if (x == -1 && y == 1 && z == 0) // n110 HARBOUR TERRACE 
+                else if (x == -1 && y == 1 && z == 0) // n110 Unions St
                 {
                     SavingCoordinates();
                     Console.WriteLine("You are on Unions St");
@@ -1746,7 +1992,7 @@ namespace MasterProgram
                  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                  ///
 
-                else if (x == -1 && y == 0 && z == 0) // n100 HARBOUR TERRACE 
+                else if (x == -1 && y == 0 && z == 0) // n100 Unions St
                 {
                     SavingCoordinates();
                     Console.WriteLine("You are on Unions St");
@@ -1754,7 +2000,7 @@ namespace MasterProgram
                 }//LOCATION n100/////////////////////////////////////////////////////////////////////////////////////////////////
                  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                  ///
-                else if (x == 1 && y == 3 && z == 0) // 130 HARBOUR TERRACE 
+                else if (x == 1 && y == 3 && z == 0) // 130 Forth St 
                 {
                     SavingCoordinates();
                     Console.WriteLine("You are on Forth St");
@@ -1762,7 +2008,7 @@ namespace MasterProgram
                 }//LOCATION 130/////////////////////////////////////////////////////////////////////////////////////////////////
                  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                  ///
-                else if (x == 0 && y == 3 && z == 0) // 030 HARBOUR TERRACE 
+                else if (x == 0 && y == 3 && z == 0) // 030 Forth St  
                 {
                     SavingCoordinates();
                     Console.WriteLine("You are on Forth St");
@@ -1770,8 +2016,154 @@ namespace MasterProgram
                 }//LOCATION 030/////////////////////////////////////////////////////////////////////////////////////////////////
                  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                  ///
-
-
+                else if (x == 2 && y == -4 && z == 1) // 2n41 Manaaki lvl 2
+                {
+                    SavingCoordinates();
+                    Console.WriteLine("You are on Forth St");
+                    CommandAnalysis(location2n41);
+                }//LOCATION 030/////////////////////////////////////////////////////////////////////////////////////////////////
+                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                 ///
+                else if (x == 0 && y == 3 && z == 0) // n210 Manaaki  
+                {
+                    SavingCoordinates();
+                    Console.WriteLine("You have entered the Library.");
+                    Console.WriteLine("You are on the first floor.");
+                    Console.WriteLine("You can see a set of stairs.");
+                    CommandAnalysis(locationn210);
+                }//LOCATION 030/////////////////////////////////////////////////////////////////////////////////////////////////
+                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                 ///
+                else if (x == 3 && y == -4 && z == 1) // 3n41 Manaaki  
+                {
+                    SavingCoordinates();
+                    
+                    Console.WriteLine("You are on the second floor.");
+                    Console.WriteLine("the second is dark and it seems like someone or something has visited recently");
+                    CommandAnalysis(location3n41);
+                }//LOCATION 3n41/////////////////////////////////////////////////////////////////////////////////////////////////
+                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                 ///
+                else if (x == 4 && y == -4 && z == 1) // 4n41 Manaaki  
+                {
+                    SavingCoordinates();
+                    Console.WriteLine("You are still on the second floor.");
+                    CommandAnalysis(location4n41);
+                }//LOCATION 4n41/////////////////////////////////////////////////////////////////////////////////////////////////
+                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                 ///
+                else if (x == 2 && y == -5 && z == 1) // 2n51 Manaaki  
+                {
+                    SavingCoordinates();
+                    Console.WriteLine("You are still on the second floor.");
+                    CommandAnalysis(location2n51);
+                }//LOCATION 2n51/////////////////////////////////////////////////////////////////////////////////////////////////
+                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                 ///
+                else if (x == 3 && y == -5 && z == 1) // 3n51 Manaaki  
+                {
+                    SavingCoordinates();
+                    Console.WriteLine("You are still on the second floor.");
+                    CommandAnalysis(location3n51);
+                }//LOCATION 3n51/////////////////////////////////////////////////////////////////////////////////////////////////
+                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                 ///
+                else if (x == 4 && y == -5 && z == 1) // 4n51 Manaaki  
+                {
+                    SavingCoordinates();
+                    Console.WriteLine("You are still on the second floor.");
+                    CommandAnalysis(location4n51);
+                }//LOCATION 4n51/////////////////////////////////////////////////////////////////////////////////////////////////
+                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                 ///
+                else if (x == 2 && y == -6 && z == 1) // 2n61 Manaaki  
+                {
+                    SavingCoordinates();
+                    Console.WriteLine("You have walked into a metal counter");
+                    CommandAnalysis(location2n61);
+                }//LOCATION 2n61/////////////////////////////////////////////////////////////////////////////////////////////////
+                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                 ///
+                else if (x == 3 && y == -6 && z == 1) // 3n61 Manaaki  
+                {
+                    SavingCoordinates();
+                    Console.WriteLine("You have walked into a metal counter");
+                    CommandAnalysis(location3n61);
+                }//LOCATION 3n61/////////////////////////////////////////////////////////////////////////////////////////////////
+                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                 ///
+                else if (x == 4 && y == -6 && z == 1) // 4n61 Manaaki  
+                {
+                    SavingCoordinates();
+                    Console.WriteLine("Food");
+                    CommandAnalysis(location4n61);
+                }//LOCATION 4n61/////////////////////////////////////////////////////////////////////////////////////////////////
+                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                 ///
+                else if (x == 2 && y == -4 && z == 0) // 2n40 Manaaki lvl 1
+                {
+                    SavingCoordinates();
+                    Console.WriteLine("You in Manaaki");
+                    CommandAnalysis(location2n40);
+                }//LOCATION 2n40/////////////////////////////////////////////////////////////////////////////////////////////////
+                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                 ///
+                else if (x == -2 && y == 1 && z == 1) // n211 Library level 1
+                {
+                    SavingCoordinates();
+                    Console.WriteLine("Second Level Library");
+                    CommandAnalysis(locationn211);
+                }//LOCATION n211/////////////////////////////////////////////////////////////////////////////////////////////////
+                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                 ///
+                else if (x == -3 && y == 1 && z == 1) // n311 Library level 1
+                {
+                    SavingCoordinates();
+                    Console.WriteLine("Second Level Library");
+                    CommandAnalysis(locationn311);
+                }//LOCATION n311/////////////////////////////////////////////////////////////////////////////////////////////////
+                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                 ///
+                else if (x == -2 && y == 0 && z == 1) // n201 Library level 1
+                {
+                    SavingCoordinates();
+                    Console.WriteLine("Second Level Library");
+                    CommandAnalysis(locationn201);
+                }//LOCATION n201/////////////////////////////////////////////////////////////////////////////////////////////////
+                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                 ///
+                else if (x == -3 && y == 0 && z == 1) // n301 Library level 1
+                {
+                    SavingCoordinates();
+                    Console.WriteLine("Second Level Library");
+                    CommandAnalysis(locationn301);
+                }//LOCATION n301/////////////////////////////////////////////////////////////////////////////////////////////////
+                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                 ///
+                else if (x == -3 && y == 2 && z == 1) // n321 Library level 1
+                {
+                    SavingCoordinates();
+                    Console.WriteLine("Second Level Library");
+                    CommandAnalysis(locationn321);
+                }//LOCATION n321/////////////////////////////////////////////////////////////////////////////////////////////////
+                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                 ///
+                else if (x == -3 && y == 2 && z == 2) // n322 Library level 1
+                {
+                    SavingCoordinates();
+                    Console.WriteLine("Second Level Library");
+                    CommandAnalysis(locationn322);
+                }//LOCATION n322/////////////////////////////////////////////////////////////////////////////////////////////////
+                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                 ///
+                else if (x == -3 && y == 3 && z == 2) // n332 Library level 2
+                {
+                    SavingCoordinates();
+                    Console.WriteLine("Second Level Library");
+                    CommandAnalysis(locationn332);
+                }//LOCATION n332/////////////////////////////////////////////////////////////////////////////////////////////////
+                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                 ///
 
 
                 //RED ZONES
@@ -1816,7 +2208,23 @@ namespace MasterProgram
 			Thread.Sleep(2500);
 			Environment.Exit(-1);
 		}
-		static void Main()
+        public static void Omnipresent(string answer)
+        {
+            switch (answer)
+            {
+                case "omnipresent":
+                    Console.Write("x coordinate: ");
+                    x = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("y coordinate: ");
+                    y = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("z coordinate: ");
+                    z = Convert.ToInt32(Console.ReadLine());
+                    secondWhileCondition = false;
+                    anythingElseCondition = false;
+                    break;
+            }
+        }
+        static void Main()
         {
 			Console.SetWindowSize(160, 40);
 			Console.WriteLine("");
