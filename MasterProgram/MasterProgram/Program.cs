@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Threading;
 
 namespace MasterProgram
 {
@@ -37,13 +38,24 @@ namespace MasterProgram
         public static string[] location202 = new string[10];
 		public static string[] location0n20 = new string[10];
 		public static string[] location1n40 = new string[10];
-		public static string[] location2n30 = new string[10];
+		public static string[] location2n40 = new string[10];
 		public static string[] location2n20 = new string[10];
 		public static string[] location1n30 = new string[10];
-		public static string[] location1n20= new string[10];
+		public static string[] location1n20 = new string[10];
+        //Union st
+        public static string[] locationn150 = new string[10];
+        public static string[] locationn140 = new string[10];
+        public static string[] locationn130 = new string[10];
+        public static string[] locationn120 = new string[10];
+        public static string[] locationn110 = new string[10];
+        public static string[] locationn100 = new string[10];
+        //ForthSt
+        public static string[] location130 = new string[10];
+        public static string[] location030 = new string[10];
 
-		//LOCATION BOOLEANS
-		public static bool Bill = false, Francisco = false, Mitchell = false, Nabeel = false; // These values decide the route of the game
+
+        //LOCATION BOOLEANS
+        public static bool Bill = false, Francisco = false, Mitchell = false, Nabeel = false; // These values decide the route of the game
         public static bool introduction = true;
         public static bool messageSeen = false;
         public static bool phoneCharged = false;
@@ -175,7 +187,52 @@ namespace MasterProgram
 			{
 				location1n40[i] = sr.ReadLine();
 			}
-			sr.Close();
+            separator = sr.ReadLine();//ITEMS LOCATION 2n40
+            for (int i = 0; i < location2n40.Length; i++)
+            {
+                location2n40[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION n150
+            for (int i = 0; i < locationn150.Length; i++)
+            {
+                locationn150[i] = sr.ReadLine(); 
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION n140
+            for (int i = 0; i < locationn140.Length; i++)
+            {
+                locationn140[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION n130
+            for (int i = 0; i < locationn130.Length; i++)
+            {
+                locationn130[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION n120
+            for (int i = 0; i < locationn120.Length; i++)
+            {
+                locationn120[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION n110
+            for (int i = 0; i < locationn110.Length; i++)
+            {
+                locationn110[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION n100
+            for (int i = 0; i < locationn100.Length; i++)
+            {
+                locationn100[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION 130
+            for (int i = 0; i < location130.Length; i++)
+            {
+                location130[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION 030
+            for (int i = 0; i < location030.Length; i++)
+            {
+                location030[i] = sr.ReadLine();
+            }
+            sr.Close();
 
             //BOOLEANS
             StreamReader zr = new StreamReader("newGameBooleans.txt");
@@ -272,6 +329,76 @@ namespace MasterProgram
             for (int i = 0; i < location202.Length; i++)
             {
                 location202[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION 1n20
+            for (int i = 0; i < location1n20.Length; i++)
+            {
+                location1n20[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION 1n30
+            for (int i = 0; i < location1n30.Length; i++)
+            {
+                location1n30[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION 2n20
+            for (int i = 0; i < location2n20.Length; i++)
+            {
+                location2n20[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION 1n30
+            for (int i = 0; i < location0n20.Length; i++)
+            {
+                location0n20[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION 1n40
+            for (int i = 0; i < location1n40.Length; i++)
+            {
+                location1n40[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION 2n40
+            for (int i = 0; i < location2n40.Length; i++)
+            {
+                location2n40[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION n150
+            for (int i = 0; i < locationn150.Length; i++)
+            {
+                locationn150[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION n140
+            for (int i = 0; i < locationn140.Length; i++)
+            {
+                locationn140[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION n130
+            for (int i = 0; i < locationn130.Length; i++)
+            {
+                locationn130[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION n120
+            for (int i = 0; i < locationn120.Length; i++)
+            {
+                locationn120[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION n110
+            for (int i = 0; i < locationn110.Length; i++)
+            {
+                locationn110[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION n100
+            for (int i = 0; i < locationn100.Length; i++)
+            {
+                locationn100[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION 130
+            for (int i = 0; i < location130.Length; i++)
+            {
+                location130[i] = sr.ReadLine();
+            }
+            separator = sr.ReadLine();//ITEMS LOCATION 030
+            for (int i = 0; i < location030.Length; i++)
+            {
+                location030[i] = sr.ReadLine();
             }
             sr.Close();
 
@@ -398,7 +525,47 @@ namespace MasterProgram
 				{
 					sw.WriteLine(location1n40[i]);
 				}
-				sw.WriteLine("Placeholder");
+                sw.WriteLine("LOCATION n150 Dark alley");
+                for (int i = 0; i < locationn150.Length; i++)
+                {
+                    sw.WriteLine(locationn150[i]);
+                }
+                sw.WriteLine("LOCATION n140 Dark alley");
+                for (int i = 0; i < locationn140.Length; i++)
+                {
+                    sw.WriteLine(locationn140[i]);
+                }
+                sw.WriteLine("LOCATION n130 Dark alley");
+                for (int i = 0; i < locationn130.Length; i++)
+                {
+                    sw.WriteLine(locationn130[i]);
+                }
+                sw.WriteLine("LOCATION n120 Dark alley");
+                for (int i = 0; i < locationn120.Length; i++)
+                {
+                    sw.WriteLine(locationn120[i]);
+                }
+                sw.WriteLine("LOCATION n110 Dark alley");
+                for (int i = 0; i < locationn110.Length; i++)
+                {
+                    sw.WriteLine(locationn110[i]);
+                }
+                sw.WriteLine("LOCATION n100 Dark alley");
+                for (int i = 0; i < locationn100.Length; i++)
+                {
+                    sw.WriteLine(locationn100[i]);
+                }
+                sw.WriteLine("LOCATION 130 Dark alley");
+                for (int i = 0; i < location130.Length; i++)
+                {
+                    sw.WriteLine(location130[i]);
+                }
+                sw.WriteLine("LOCATION 030 Dark alley");
+                for (int i = 0; i < location030.Length; i++)
+                {
+                    sw.WriteLine(location030[i]);
+                }
+                sw.WriteLine("Placeholder");
                 sw.Close();
 
                 //BOOLEANS
@@ -1531,13 +1698,84 @@ namespace MasterProgram
 				else if (x == 1 && y == -4 && z == 0) // 1N40 HARBOUR TERRACE 
 				{
 					SavingCoordinates();
-					Console.WriteLine("You are in a dark alley that leads you to an abandoned");
+					Console.WriteLine("You are on Harbour Terrace");
 					CommandAnalysis(location1n40);
 				}//LOCATION 1n40/////////////////////////////////////////////////////////////////////////////////////////////////
-				 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-				 ///
-				//RED ZONES
-				else if (RedZoneCoordinates.Contains($"{x},{y},{z}")) { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("You can't go this way\n"); LoadSavedCoordinates(); Console.ForegroundColor = ConsoleColor.Gray; }
+                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                 ///
+                
+
+                else if (x == -1 && y == 5 && z == 0) // n150 HARBOUR TERRACE 
+                {
+                    SavingCoordinates();
+                    Console.WriteLine("You are on Unions St");
+                    CommandAnalysis(locationn150);
+                }//LOCATION n150/////////////////////////////////////////////////////////////////////////////////////////////////
+                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                 ///
+                else if (x == -1 && y == 4 && z == 0) // n140 HARBOUR TERRACE 
+                {
+                    SavingCoordinates();
+                    Console.WriteLine("You are on Unions St");
+                    CommandAnalysis(locationn140);
+                }//LOCATION n140/////////////////////////////////////////////////////////////////////////////////////////////////
+                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                 ///
+                else if (x == -1 && y == 3 && z == 0) // n130 HARBOUR TERRACE 
+                {
+                    SavingCoordinates();
+                    Console.WriteLine("You are on Unions St");
+                    CommandAnalysis(locationn130);
+                }//LOCATION n130/////////////////////////////////////////////////////////////////////////////////////////////////
+                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                 ///
+                else if (x == -1 && y == 2 && z == 0) // n120 HARBOUR TERRACE 
+                {
+                    SavingCoordinates();
+                    Console.WriteLine("You are on Unions St");
+                    CommandAnalysis(locationn120);
+                }//LOCATION n120/////////////////////////////////////////////////////////////////////////////////////////////////
+                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                 ///
+                else if (x == -1 && y == 1 && z == 0) // n110 HARBOUR TERRACE 
+                {
+                    SavingCoordinates();
+                    Console.WriteLine("You are on Unions St");
+                    CommandAnalysis(locationn110);
+                }//LOCATION n110/////////////////////////////////////////////////////////////////////////////////////////////////
+                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                 ///
+
+                else if (x == -1 && y == 0 && z == 0) // n100 HARBOUR TERRACE 
+                {
+                    SavingCoordinates();
+                    Console.WriteLine("You are on Unions St");
+                    CommandAnalysis(locationn100);
+                }//LOCATION n100/////////////////////////////////////////////////////////////////////////////////////////////////
+                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                 ///
+                else if (x == 1 && y == 3 && z == 0) // 130 HARBOUR TERRACE 
+                {
+                    SavingCoordinates();
+                    Console.WriteLine("You are on Forth St");
+                    CommandAnalysis(location130);
+                }//LOCATION 130/////////////////////////////////////////////////////////////////////////////////////////////////
+                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                 ///
+                else if (x == 0 && y == 3 && z == 0) // 030 HARBOUR TERRACE 
+                {
+                    SavingCoordinates();
+                    Console.WriteLine("You are on Forth St");
+                    CommandAnalysis(location030);
+                }//LOCATION 030/////////////////////////////////////////////////////////////////////////////////////////////////
+                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                 ///
+
+
+
+
+                //RED ZONES
+                else if (RedZoneCoordinates.Contains($"{x},{y},{z}")) { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("You can't go this way\n"); LoadSavedCoordinates(); Console.ForegroundColor = ConsoleColor.Gray; }
             }
         }
         public static void decisionRoutes()

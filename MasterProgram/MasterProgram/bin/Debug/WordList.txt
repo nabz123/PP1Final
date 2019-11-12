@@ -1,0 +1,50 @@
+Implemented words:
+c
+coordinates
+save
+exit
+quit
+i
+inventory
+l
+look
+n
+north
+e
+east
+w
+west
+s
+south
+u
+up
+d
+down
+get
+take
+grab
+pick
+drop
+discard
+remove
+inspect
+examine
+use
+utilize
+turn on
+power on
+love
+nothing
+keys (can be used)
+bottle (can be filled)
+phone (can be lamp / take selfie)
+photo
+charger
+
+YET TO IMPLEMENT:
+map
+wrench
+axe (logan park)
+gun (uni police station)
+food (can be eaten, can poison)
+stick (can be broken / used to attack)
