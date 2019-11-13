@@ -72,7 +72,7 @@ namespace MasterProgram
         public static string[] locationn301 = new string[10];
         public static string[] locationn321 = new string[10]; //stairs
         public static string[] locationn322 = new string[10]; //third floor
-        public static string[] locationn332 = new string[10]; //passport
+        public static string[] locationn332 = new string[10]; //keycard
 
 
         //LOCATION BOOLEANS
@@ -323,7 +323,7 @@ namespace MasterProgram
             {
                 locationn301[i] = sr.ReadLine();
             }
-            separator = sr.ReadLine();//ITEMS LOCATION n301
+            separator = sr.ReadLine();//ITEMS LOCATION n321
             for (int i = 0; i < locationn321.Length; i++)
             {
                 locationn321[i] = sr.ReadLine();
@@ -581,7 +581,7 @@ namespace MasterProgram
             {
                 locationn301[i] = sr.ReadLine();
             }
-            separator = sr.ReadLine();//ITEMS LOCATION n301
+            separator = sr.ReadLine();//ITEMS LOCATION n321
             for (int i = 0; i < locationn321.Length; i++)
             {
                 locationn321[i] = sr.ReadLine();
@@ -781,6 +781,76 @@ namespace MasterProgram
                 {
                     sw.WriteLine(locationn210[i]);
                 }
+                sw.WriteLine("LOCATION 3n41 Library");
+                for (int i = 0; i < location3n41.Length; i++)
+                {
+                    sw.WriteLine(location3n41[i]);
+                }
+                sw.WriteLine("LOCATION 4n41 Library");
+                for (int i = 0; i < location4n41.Length; i++)
+                {
+                    sw.WriteLine(location4n41[i]);
+                }
+                sw.WriteLine("LOCATION 2n51 Library");
+                for (int i = 0; i < location2n51.Length; i++)
+                {
+                    sw.WriteLine(location2n51[i]);
+                }
+                sw.WriteLine("LOCATION 3n51 Library");
+                for (int i = 0; i < location3n51.Length; i++)
+                {
+                    sw.WriteLine(location3n51[i]);
+                }
+                sw.WriteLine("LOCATION 4n51 Library");
+                for (int i = 0; i < location4n51.Length; i++)
+                {
+                    sw.WriteLine(location4n51[i]);
+                }
+                sw.WriteLine("LOCATION 2n61 Library");
+                for (int i = 0; i < location2n61.Length; i++)
+                {
+                    sw.WriteLine(location2n61[i]);
+                }
+                sw.WriteLine("LOCATION 4n61 Library");
+                for (int i = 0; i < location4n61.Length; i++)
+                {
+                    sw.WriteLine(location4n61[i]);
+                }
+                sw.WriteLine("LOCATION n211 Library");
+                for (int i = 0; i < locationn211.Length; i++)
+                {
+                    sw.WriteLine(locationn211[i]);
+                }
+                sw.WriteLine("LOCATION n311 Library");
+                for (int i = 0; i < locationn311.Length; i++)
+                {
+                    sw.WriteLine(locationn311[i]);
+                }
+                sw.WriteLine("LOCATION n201 Library");
+                for (int i = 0; i < locationn201.Length; i++)
+                {
+                    sw.WriteLine(locationn201[i]);
+                }
+                sw.WriteLine("LOCATION n301 Library");
+                for (int i = 0; i < locationn301.Length; i++)
+                {
+                    sw.WriteLine(locationn301[i]);
+                }
+                sw.WriteLine("LOCATION n321 Library");
+                for (int i = 0; i < locationn321.Length; i++)
+                {
+                    sw.WriteLine(locationn321[i]);
+                }
+                sw.WriteLine("LOCATION n322 Library");
+                for (int i = 0; i < locationn322.Length; i++)
+                {
+                    sw.WriteLine(locationn322[i]);
+                }
+                sw.WriteLine("LOCATION n332 Library");
+                for (int i = 0; i < locationn332.Length; i++)
+                {
+                    sw.WriteLine(locationn332[i]);
+                }
                 sw.WriteLine("Placeholder");
                 sw.Close();
 
@@ -974,14 +1044,14 @@ namespace MasterProgram
                         else if (randomNumber == 3) Console.WriteLine("You can see a V here");
 
                     }
-                    if (location.Contains("passport"))
+                    if (location.Contains("keycard"))
                     {
                         //Generic Description
                         int randomNumber = rand.Next(4);
-                        if (randomNumber == 0) Console.WriteLine("There is a passport nearby");
-                        else if (randomNumber == 1) Console.WriteLine("There is a passport on the floor here");
-                        else if (randomNumber == 2) Console.WriteLine("There is a passport on the ground here");
-                        else if (randomNumber == 3) Console.WriteLine("You can see a passport here");
+                        if (randomNumber == 0) Console.WriteLine("There is a keycard nearby");
+                        else if (randomNumber == 1) Console.WriteLine("There is a keycard on the floor here");
+                        else if (randomNumber == 2) Console.WriteLine("There is a keycard on the ground here");
+                        else if (randomNumber == 3) Console.WriteLine("You can see a keycard here");
 
                     }
                     //COMPUTER
@@ -1645,7 +1715,8 @@ namespace MasterProgram
         //MAIN GAME
         public static void MainGAME(int inputFromMenu)
         {
-			if (inputFromMenu == 1) ReadingNewGameSettings();    // NEW GAME
+            Console.Clear();
+            if (inputFromMenu == 1) ReadingNewGameSettings();    // NEW GAME
 			if (inputFromMenu == 2) ReadingSavedGameSettings();  // RESUME GAME
 			if (inputFromMenu == 3) Credits();              //Instructions
 			if (inputFromMenu == 4) ExitGame();                  //Exit Game
@@ -1657,12 +1728,12 @@ namespace MasterProgram
 
 			//INSTRUCTIONS
 			//Console.WriteLine("SEVERAL LINES WITH INSTRUCTIONS IN THIS PART");
-			Console.WriteLine("\n\t\t\tYou are to navigate your way through");
-			Console.WriteLine("\t\t\tthe zombie apocalypse. To do so you must");
-			Console.WriteLine("\t\t\tsearch for items that are spread out around ");
-			Console.WriteLine("\t\t\t(Dunedin or world). Basic commands are");
-			Console.WriteLine("\t\t\tN,E,S & W, your job is to figure out the rest.");
-			Console.WriteLine("\t\t\tGood Luck");
+			Console.WriteLine("\nYou are to navigate your way through");
+			Console.WriteLine("the zombie apocalypse. To do so you must");
+			Console.WriteLine("tsearch for items that are spread out around ");
+			Console.WriteLine("(Dunedin or world). Basic commands are");
+			Console.WriteLine("N,E,S & W, your job is to figure out the rest.");
+			Console.WriteLine("Good Luck");
 
 			Console.Write("Press enter to start:");
             Console.ReadLine();
@@ -2019,7 +2090,7 @@ namespace MasterProgram
                 else if (x == 2 && y == -4 && z == 1) // 2n41 Manaaki lvl 2
                 {
                     SavingCoordinates();
-                    Console.WriteLine("You are on Forth St");
+                    Console.WriteLine("Stairs level 2 Manaaki");
                     CommandAnalysis(location2n41);
                 }//LOCATION 030/////////////////////////////////////////////////////////////////////////////////////////////////
                  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2039,7 +2110,7 @@ namespace MasterProgram
                     SavingCoordinates();
                     
                     Console.WriteLine("You are on the second floor.");
-                    Console.WriteLine("the second is dark and it seems like someone or something has visited recently");
+                    Console.WriteLine("the second is still dark and the sounds are becoming louder and louder...");
                     CommandAnalysis(location3n41);
                 }//LOCATION 3n41/////////////////////////////////////////////////////////////////////////////////////////////////
                  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2047,7 +2118,7 @@ namespace MasterProgram
                 else if (x == 4 && y == -4 && z == 1) // 4n41 Manaaki  
                 {
                     SavingCoordinates();
-                    Console.WriteLine("You are still on the second floor.");
+                    Console.WriteLine("You are getting warmer to the mysterious sounds");
                     CommandAnalysis(location4n41);
                 }//LOCATION 4n41/////////////////////////////////////////////////////////////////////////////////////////////////
                  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2055,7 +2126,7 @@ namespace MasterProgram
                 else if (x == 2 && y == -5 && z == 1) // 2n51 Manaaki  
                 {
                     SavingCoordinates();
-                    Console.WriteLine("You are still on the second floor.");
+                    Console.WriteLine("You are getting even warmer");
                     CommandAnalysis(location2n51);
                 }//LOCATION 2n51/////////////////////////////////////////////////////////////////////////////////////////////////
                  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2063,7 +2134,7 @@ namespace MasterProgram
                 else if (x == 3 && y == -5 && z == 1) // 3n51 Manaaki  
                 {
                     SavingCoordinates();
-                    Console.WriteLine("You are still on the second floor.");
+                    Console.WriteLine("You have walked into a puddle of water");
                     CommandAnalysis(location3n51);
                 }//LOCATION 3n51/////////////////////////////////////////////////////////////////////////////////////////////////
                  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2095,15 +2166,16 @@ namespace MasterProgram
                 else if (x == 4 && y == -6 && z == 1) // 4n61 Manaaki  
                 {
                     SavingCoordinates();
-                    Console.WriteLine("Food");
+                    Console.WriteLine("there's something to picked up"); //V drink
                     CommandAnalysis(location4n61);
                 }//LOCATION 4n61/////////////////////////////////////////////////////////////////////////////////////////////////
                  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                  ///
-                else if (x == 2 && y == -4 && z == 0) // 2n40 Manaaki lvl 1
+                else if (x == 2 && y == -4 && z == 0) // 2n40 Manaaki ground level
                 {
                     SavingCoordinates();
                     Console.WriteLine("You in Manaaki");
+                    Console.WriteLine("You seem to hear some rumbling and weird sounds coming from somewhere");
                     CommandAnalysis(location2n40);
                 }//LOCATION 2n40/////////////////////////////////////////////////////////////////////////////////////////////////
                  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2151,7 +2223,8 @@ namespace MasterProgram
                 else if (x == -3 && y == 2 && z == 2) // n322 Library level 1
                 {
                     SavingCoordinates();
-                    Console.WriteLine("Second Level Library");
+                    Console.WriteLine("Third Level Library");
+                    Console.WriteLine("Stairs");
                     CommandAnalysis(locationn322);
                 }//LOCATION n322/////////////////////////////////////////////////////////////////////////////////////////////////
                  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2159,9 +2232,17 @@ namespace MasterProgram
                 else if (x == -3 && y == 3 && z == 2) // n332 Library level 2
                 {
                     SavingCoordinates();
-                    Console.WriteLine("Second Level Library");
+                    Console.WriteLine("Keycard location");
                     CommandAnalysis(locationn332);
                 }//LOCATION n332/////////////////////////////////////////////////////////////////////////////////////////////////
+                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                 ///
+                else if (x == -2 && y == 1 && z == 0) // n210 Library Enterance
+                {
+                    SavingCoordinates();
+                    Console.WriteLine("You are on the libraries ground floor");
+                    CommandAnalysis(locationn210);
+                }//LOCATION n210/////////////////////////////////////////////////////////////////////////////////////////////////
                  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                  ///
 
@@ -2192,12 +2273,16 @@ namespace MasterProgram
 		public static void Credits()
 		{
 			Console.Clear();
-			Console.WriteLine("\n\t\t\t  \n");
-			Console.WriteLine("\t\t\t  \n");
-			Console.WriteLine("\t\t\t  \n");
-			Console.WriteLine("\t\t\t  \n");
-			Console.WriteLine("\t\t\t  \n");
-			Thread.Sleep(5000);
+            Console.WriteLine(" The purpose of this project was to demonstrate the skills that we have been taught in the first semester of the BIT S2 2019 stream");
+            Console.WriteLine(" by creating this game");
+            Console.WriteLine("");
+            Console.WriteLine(" Thinking of a suitable credits area has taken way too much effort and time so who cares, here are the creators:");
+            Console.WriteLine("");
+			Console.WriteLine(" Nabeel Riad");
+			Console.WriteLine(" Mitchell Scott");
+			Console.WriteLine(" Francisco Rosas");
+			Console.WriteLine(" Nguyen Nhan\n");
+            Console.ReadLine();
 			Console.Clear();
 			Main();
 		}
@@ -2233,7 +2318,9 @@ namespace MasterProgram
 			Console.WriteLine("\t\t\t\t\t\t\t3 Credits \n");
 			Console.WriteLine("\t\t\t\t\t\t\t4 Exit \n");
 			Console.Write("\t\t\t\t\t\t       :");
+            
 			MainGAME(Convert.ToInt32(Console.ReadLine()));
-		}
+            
+        }
     }
 }

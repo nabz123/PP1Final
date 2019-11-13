@@ -1,0 +1,58 @@
+Usable Locations:
+
+Dblock
+First Floor
+1,0,0 D Block Stairs Level 1
+1,1,0 D Block Exit North
+1,-1,0 D Block Exit South
+Second Level
+1,0,1 D Block Stairs Level 2
+0,0,1 D201
+1,-1,1 Common Room
+1,1,1 Rob
+Third Level:
+1,0,2 D Block Stairs Level 3
+1,-1,2 Elise Room
+
+
+1,2,0 H Block
+1,-3,0 Manaaki
+Library -2,1,0
+-1,5,0 Uni 
+1,-4,0 Carpark
+2,-4,0 Student Village
+
+
+
+
+
+
+
+Boudnries: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
