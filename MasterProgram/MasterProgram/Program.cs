@@ -1718,18 +1718,21 @@ namespace MasterProgram
                         {
 
                         }
+                        Console.WriteLine("LINK");
+                        CommandAnalysis(locationn140);
                         beforeUniCampus = false;  // These two booleans should be activated after you have the keycard
                         rightAfterUniCampus = true; 
                     }
                     else if (rightAfterUniCampus) // if firstTimeUni is false
                     {
                         rightAfterUniCampus = false;
-                        afterPaulQuest = true;
+                        afterPaulQuest = true; /////////////////////// IMPORTANT
                         while (gateLoop)
                         {
                             Console.WriteLine("\nYou come out of the University campus and wonder whether to close the gate or not.");
                             Console.Write("Do you close the gate? (Y/N): ");
                             string answer2 = Console.ReadLine();
+                            answer2 = answer2.ToLower();
                             if (answer2 != "")
                             {
                                 answer2 = answer2.ToLower();
@@ -1740,6 +1743,7 @@ namespace MasterProgram
                                         gateLoop = false;
                                         break;
                                     case 'n':
+                                        openGate = true;
                                         gateLoop = false;  //Ending Decision
                                         break;
                                     default:
@@ -1749,6 +1753,7 @@ namespace MasterProgram
                             }
                             else Console.WriteLine("Please enter a valid answer");
                         }
+                        CommandAnalysis(locationn140);
                     }
                     else if (closeGate && savedPaul)
                     {
@@ -1760,7 +1765,7 @@ namespace MasterProgram
                         Console.WriteLine("Suddenly you remember that you were about to become a zombie, so you quickly see your arms and hands, and everything looks in order.");
                         Console.WriteLine("When Elise notices how concern you look, she proceeds to explain. She tells you that the scientists were able to develop more suerum,");
                         Console.WriteLine("and that after you passed out at the gate they took you into the camp, and hours later the army came to rescue everyone.");
-                        Console.WriteLine("You {0} have survived the Otago Apocalypse and you great heart managed to rescue everyone. Congratulations!",name);
+                        Console.WriteLine("You {0}, have survived the Otago Apocalypse and your great heart managed to rescue everyone. Congratulations!",name);
                         Console.ReadLine();
                         firstWhileCondition = false;
                     }
@@ -1774,7 +1779,7 @@ namespace MasterProgram
                         Console.WriteLine("You lie to Elise telling her that you lost the suerum, then she starts to freak out because that was the only cure there was.");
                         Console.WriteLine("You say that you feel sorry for Paul and Joy, and head to find something to eat.");
                         Console.WriteLine("Hours later the army comes in and rescues everyone.");
-                        Console.WriteLine("You {0} have survived the Otago Apocalypse, however, you are intrinsically selfish. Neutral Ending", name);
+                        Console.WriteLine("You {0}, have survived the Otago Apocalypse, however, you are intrinsically selfish. Neutral Ending", name);
                         Console.ReadLine();
                         firstWhileCondition = false;
                     }
@@ -1788,7 +1793,7 @@ namespace MasterProgram
                         Console.WriteLine("You realize that all the zombies that walk past you ignore you. Then, you try to hurry up and get to the Refugee Camp desperately to find Salvation");
                         Console.WriteLine("When you reach the camp, all you find is hell, apparently the zombies have completely taken over the place.");
                         Console.WriteLine("You blame yourself for not having closed the gates and your consciousness fades away.");
-                        Console.WriteLine("You {0} didn't survive the Otago Apocalypse and got everyone killed. Such a Tragedy. Bad Ending.", name);
+                        Console.WriteLine("You {0}, didn't survive the Otago Apocalypse and got everyone killed. Such a Tragedy. Bad Ending.", name);
                         Console.ReadLine();
                         firstWhileCondition = false;
                     }
@@ -1800,7 +1805,7 @@ namespace MasterProgram
                         Console.WriteLine("All you can hear are the screams of horror of what's happening");
                         Console.WriteLine("You can't stand the guilt of being responsible for killing everyone, and decide that the easiest way out is to end it right here.");
                         Console.WriteLine("With no sanity left in your mind, you run into the horde of zombies to never see the light again.");
-                        Console.WriteLine("You {0} didn't survive the Otago Apocalypse and got everyone killed, you are intrinsically selfish. Bad Ending.", name);
+                        Console.WriteLine("You {0}, didn't survive the Otago Apocalypse and got everyone killed, you are intrinsically selfish. Bad Ending.", name);
                         Console.ReadLine();
                         firstWhileCondition = false;
                     }
@@ -1808,7 +1813,6 @@ namespace MasterProgram
                     {
 
                     }
-                    CommandAnalysis(locationn140);
                 }//LOCATION n140 UNIVERSITY GATE
                  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 else if (x == -1 && y == 5 && z == 0) //LOCATION n150 UNIVERSITY CAMPUS
