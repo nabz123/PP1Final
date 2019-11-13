@@ -821,7 +821,7 @@ namespace MasterProgram
                                 break;
                             case "documents":
                                 passwordCheck = true;
-                                Console.WriteLine("As you examine the documents you see a list of names with their respective marks for the Professional Practice paper. As you read through it, you can spot only four people with perfect marks:");
+                                Console.WriteLine("As you examine the documents you see a list of names with their respective marks for the Professional Practice paper.\n As you read through it, you can spot only four people with perfect marks:");
                                 Console.WriteLine("Name".PadRight(10)+"Mark".PadLeft(10));
                                 Console.WriteLine("Bill".PadRight(10)+"Exemplary".PadLeft(10));
                                 Console.WriteLine("Francisco".PadRight(10)+"Exemplary".PadLeft(10));
@@ -840,7 +840,7 @@ namespace MasterProgram
                                 break;
                             case "computer":
                             case "pc":
-                                Console.WriteLine("Your average BIT computer, which uses a single monitor unfortunately, eager for your password to log you on.");
+                                Console.WriteLine("Your average BIT computer, who uses a single monitor unfortunately, eager for your password to log you on.");
                                 Console.WriteLine("It is powered by a UPS, probably you could charge your phone here");
                                 break;
                         }
@@ -938,7 +938,7 @@ namespace MasterProgram
                 if ((x == 1 && y == -1 && z == 1) && passwordCheck)
                 {
                     Console.WriteLine("You bring up the browser, and there is no internet connection. However, on the open tab there is a live youtube broadcast buffered on the memory");
-                    Console.WriteLine("You wind back and watch the video from the beginning. It says: “Emergency... all the population in the Otago Region has to evacuate the area by going to the nearest safe zones immediately, an outbreak of...” the video stops playing.");
+                    Console.WriteLine("You wind back and watch the video from the beginning. It says: “Emergency... all the population in the Otago Region has to evacuate the area by \ngoing to the nearest safe zones immediately, an outbreak of...” the video stops playing.");
                     knowingWhatIsGoingOn = true;
                 }
                 else Console.WriteLine("You need a working computer to enter your password");
@@ -1314,10 +1314,10 @@ namespace MasterProgram
                         while (d201Loop)
                         {
                             Console.WriteLine("\nYou are in D201, you locked the door, through the window you can see Paul attempting to get inside to eat your brain and read your \"Tech News\".");
-                            Console.WriteLine("After a while, you look out the window, everything is calm. Nevertheless, you start to feel the effects of the virus.");
+                            Console.WriteLine("After a while, you look out the window, everything seems calm. Nevertheless, you start to feel the effects of the virus.");
                             Console.WriteLine("You are slowly turning into a zombie!");
                             Console.WriteLine("You have two options:");
-                            Console.WriteLine("do you spend the cure on you and \"save yourself\" or you \"save Paul\"?");
+                            Console.WriteLine("do you use the cure on yourself \"save yourself\" or you do \"save Paul\"?");
                             string answer2 = Console.ReadLine();
                             if (answer2 != "")
                             {
@@ -1350,8 +1350,8 @@ namespace MasterProgram
                     }
                     else if (savedYourself)
                     {
-                        Console.WriteLine("\nYou take the syringe out of your inventory, and without thinking it twice, you inject the green suerum into your bloodstream.");
-                        Console.WriteLine("Immediately after, you begin to notice and feel its effects.");
+                        Console.WriteLine("\nYou pull out the syringe out from your inventory, without thinking about it twice, you inject the green ");
+                        Console.WriteLine("suerum into your bloodstream. Immediately after, you begin to notice and feel its effects.");
                         Console.WriteLine("After a while, you feel better than ever in fact you feel super human!.");
                         Console.WriteLine("You unlock the door and proceed to get Paul.");
                         getPaul = true;
@@ -1369,13 +1369,13 @@ namespace MasterProgram
                     else if (savedPaul && afterSavingPaul)
                     {
                         afterSavingPaul = false;
-                        Console.WriteLine("\nYou take the syringe out of your inventory, you stare at the green suerum and start meditating about your situation.");
+                        Console.WriteLine("\nYou pull out the syringe out from your inventory, you stare at the green suerum and start meditating about your situation.");
                         Console.WriteLine("You think that perhaps if you don't save Paul you will never be able to find out who you are.");
                         Console.WriteLine("What's more, if you end up turning into a zombie, it wouldn't matter because you think that having no memories is the same as being dead.");
-                        Console.WriteLine("Suddenly a strong noise kills your reflection time, you see Paul trying to tackle the door down.");
+                        Console.WriteLine("Suddenly a noise kills your reflection time, you see Paul trying to knock down the door.");
                         Console.WriteLine("Then you prepare the syringe and unlock the door. Paul tackles the door and after the impact, he falls over.");
                         Console.WriteLine("You jump on him and inject the suerum. Right away, you start seeing how quicly he recovers his human form.");
-                        Console.WriteLine("You are not that strong to carry Paul on your own, so you decide to drag him instead.");
+                        Console.WriteLine("You are not that strong enough to carry Paul, so you decide to drag him instead.");
                         //Adding the empty syringe to the inventory
                         for (int i = 0; i < inventory.Length; i++)
                         {
@@ -1406,9 +1406,9 @@ namespace MasterProgram
                         SavingCoordinates();
                         getPaul = false;
                         lockedPaul= true;
-                        Console.WriteLine("After stepping out of D201 you no longer feel super human when you see Paul frenetically running towards you.");
-                        Console.WriteLine("You enter D201 once more time and close the door without locking it.");
-                        Console.WriteLine("Paul tackles the door and after the impact, he falls over.");
+                        Console.WriteLine("After stepping out of D201 you no longer feel like a super human when you see Paul frenetically running towards you.");
+                        Console.WriteLine("You enter D201 once agaim and close the door without locking it.");
+                        Console.WriteLine("Paul knocks down the door and after the impact, he falls over.");
                         Console.WriteLine("You take this chance to lock him in D201");
                         LoadSavedCoordinates();
                     }
@@ -1417,7 +1417,7 @@ namespace MasterProgram
                         paulRaid = false;
                         d201Decision = true;
                         Console.WriteLine("Before continuing any further, you kneel down and start to pray to gather enough guts for what's to come.");
-                        Console.WriteLine("However, \"REALITY HITS YOU HARD BRO\", and Paul who was lurking from the darkness, jumps on you like some sort of hungry tiger.");
+                        Console.WriteLine("However, \"REALITY HITS YOU HARD BRO\", and Paul who was lurking from the darkness, pounces onto you like some sort of hungry tiger.");
                         Console.WriteLine("He bites your kneck, and immidiatly after, he goes insane by the taste of your blood.");
                         Console.WriteLine("You manage to articulate some words and say to Paul that you have the latest \"Tech News\" on your phone.");
                         Console.WriteLine("Paul gets petrified for a moment and you take this opportunity to break free and run inside D201 and quickly shut the door.");
@@ -1438,7 +1438,7 @@ namespace MasterProgram
                     if (secondTimeEliseOffice) //This if fixes a bug
                     {
                         SavingCoordinates();
-                        Console.WriteLine("The light was coming from one of the computers which seems to be still turned on thanks to a UPS. Apparently it is the only source of energy available in this building. You try to access the computer but it asks for a password");
+                        Console.WriteLine("The light is coming from one of the computers which seems to be still turned on thanks to a UPS. Apparently it is the only source of energy available in this building.\n You try to access the computer but it asks for a password");
                         CommandAnalysis(location1n11);
                     }
                     if (savingX == 1 && savingY == -1 && savingZ == 2) //COMING FROM ELISE'S OFFICE
@@ -1454,7 +1454,7 @@ namespace MasterProgram
                         {
                             secondTimeEliseOffice = true;
                             SavingCoordinates();
-                            Console.WriteLine("The light was coming from one of the computers which seems to be still turned on thanks to a UPS. Apparently it is the only source of energy available in this building. You try to access the computer but it asks for a password");
+                            Console.WriteLine("The light is coming from one of the computers which seems to be still turned on thanks to a UPS. Apparently it is the only source of energy available in this building.\n You try to access the computer but it asks for a password");
                             CommandAnalysis(location1n11);
                         }
                         else
@@ -1519,13 +1519,13 @@ namespace MasterProgram
                     {
                         firstTimeEliseOffice = false;
                         SavingCoordinates();
-                        Console.WriteLine("You enter Elise’s office and her professionally arranged desk catches your eyes once again. At the same time, something unconsciously bothers you, you realize that the smell is gone, and then you try to have a look at the corpse so that your paranoia doesn’t get the best of you. Lo and behold, all you see is just a puddle of blood instead. Right after this, you start laughing kinda like the Joaquin Phoenix when you realize that “the shit has hit the fan”.");
+                        Console.WriteLine("You enter Elise’s office and her professionally arranged desk catches your eyes once again. At the same time, something unconsciously bothers you, you realize that the smell is gone,\nand then you try to have a look at the corpse so that your paranoia doesn’t get the best of you. Lo and behold, all you see is just a puddle of blood instead. Right after this, you start laughing kinda like the Joaquin Phoenix when you realize that “the shit has hit the fan”.");
                         CommandAnalysis(location1n12);
                     }
                     else if (firstTimeEliseOffice)
                     {
                         SavingCoordinates();
-                        Console.WriteLine("As you step into Elise's office, the smell gets even stronger. On the other hand, her really well-organized desk draws your attention and makes you think that with such a setting you could always find any kind of information easier than any sort algorithm. Suddenly, you turn your head to your left and see a corpse lying on the floor. Terrified by the scene, you fall over to the floor and remain petrified for a while. Then you realize the dead man had some fancy glasses which makes you regain your sanity.");
+                        Console.WriteLine("As you step into Elise's office, the smell gets even stronger. On the other hand, her really well-organized desk draws your attention and makes you think that with such a setting you \ncould always find any kind of information easier than any sort algorithm. Suddenly, you turn your head to your left and see a corpse lying on the floor. Terrified by the scene, you fall over to the floor and remain petrified for a while. Then you realize the dead man had some fancy glasses which makes you regain your sanity.");
                         CommandAnalysis(location1n12);
                     }
                     else
@@ -1544,8 +1544,8 @@ namespace MasterProgram
                         davidFirstFloor = false;
                         SavingCoordinates();
                         Console.WriteLine("Someone is passing by looking quite... “chillaxed”.");
-                        Console.WriteLine("You approach him and ask him for help. He interrupts you and tells you that he has been working on a super exciting AI project for almost a week non-stop, and now that the servers are down for some uncommon and strange reason, he is gonna take a break.");
-                        Console.WriteLine("You try to tell him if he knows what is going on, but he walks away saying that he cannot wait to tell everyone what he’s been up to by tomorrow morning.");
+                        Console.WriteLine("You approach him and ask him for help. He interrupts you and tells you that he has been working on a super exciting AI project for almost a week non-stop, and now that the servers are down for some");
+                        Console.WriteLine("uncommon and strange reason, he is gonna take a break. You try to tell him if he knows what is going on, but he walks away saying that he cannot wait to tell everyone what he’s been up to by tomorrow morning.");
                         CommandAnalysis(location100);
                     }
                     else if (rescuePaul)
@@ -1758,13 +1758,13 @@ namespace MasterProgram
                     else if (closeGate && savedPaul)
                     {
                         Console.Clear();
-                        Console.WriteLine("Miraculously, you and Paul arrive at the University Gate, you have to open the gate in order to enter.");
+                        Console.WriteLine("Miraculously, you and Paul have arrived at the University Gate, you have to open the gate in order to enter.");
                         Console.WriteLine("You manage to close the gate again and fall exhausted to the floor, then you pass out.");
-                        Console.WriteLine("When you wake up, you see almost all the BIT community crowded inside the hospital room you are in, and a bunch of presents for you.");
+                        Console.WriteLine("When you wake up, you see almost all of the BIT community crowded inside the hospital room you are in, and a bunch of presents for you.");
                         Console.WriteLine("Then you turn your head to the left and you see Paul on the other bed smiling at you. He then expresses his gratitude to you.");
                         Console.WriteLine("Suddenly you remember that you were about to become a zombie, so you quickly see your arms and hands, and everything looks in order.");
-                        Console.WriteLine("When Elise notices how concern you look, she proceeds to explain. She tells you that the scientists were able to develop more suerum,");
-                        Console.WriteLine("and that after you passed out at the gate they took you into the camp, and hours later the army came to rescue everyone.");
+                        Console.WriteLine("When Elise notices how concerned you look, she proceeds to explain. She tells you that the scientists were able to develop more suerums,");
+                        Console.WriteLine("and that after you passing out at the gate they took you into the camp, and hours later the army came to rescue everyone.");
                         Console.WriteLine("You {0}, have survived the Otago Apocalypse and your great heart managed to rescue everyone. Congratulations!",name);
                         Console.ReadLine();
                         firstWhileCondition = false;
@@ -1786,8 +1786,8 @@ namespace MasterProgram
                     else if (openGate && savedPaul)
                     {
                         Console.Clear();
-                        Console.WriteLine("Miraculously, you and Paul arrive at the University Gate, you don't have to open the gate in order to enter because you left it open.");
-                        Console.WriteLine("You manage to close the gate again and fall exhausted to the floor, then you pass out.");
+                        Console.WriteLine("Miraculously, you and Paul have arrived at the University Gate, you don't have to open the gate in order to enter because you left it open.");
+                        Console.WriteLine("You manage to close the gate again and at this point your feeling extreamly fatigued, therefore you pass out.");
                         Console.WriteLine("When you wake up, you feel like eating brains so bad. Then you look up and contemplate a horde of zombies inside the University Campus.");
                         Console.WriteLine("You barely have lucid thoughts by now. You look down and see a corpse on the ground. You swear that body had a head before you passed out.");
                         Console.WriteLine("You realize that all the zombies that walk past you ignore you. Then, you try to hurry up and get to the Refugee Camp desperately to find Salvation");
@@ -1802,7 +1802,7 @@ namespace MasterProgram
                         Console.WriteLine("You arrive at the University Gate.");
                         Console.WriteLine("You see a huge horde of zombies making their way into the University Campus");
                         Console.WriteLine("You then realize having left the gates open was not a really good idea at all.");
-                        Console.WriteLine("All you can hear are the screams of horror of what's happening");
+                        Console.WriteLine("All you can hear are the screams of horror of what is about to happen.");
                         Console.WriteLine("You can't stand the guilt of being responsible for killing everyone, and decide that the easiest way out is to end it right here.");
                         Console.WriteLine("With no sanity left in your mind, you run into the horde of zombies to never see the light again.");
                         Console.WriteLine("You {0}, didn't survive the Otago Apocalypse and got everyone killed, you are intrinsically selfish. Bad Ending.", name);
@@ -1821,8 +1821,8 @@ namespace MasterProgram
                     {
                         firstTimeUni = false;
                         Console.Clear();
-                        Console.WriteLine("You come inside the University campus making sure you close the gate again.");
-                        Console.WriteLine("On the distance you see someone with a flashlight, then, you decide to approach and start shouting for help.");
+                        Console.WriteLine("You walk into the University campus making sure you close the gate again.");
+                        Console.WriteLine("In the distance you see someone with a flashlight, then, you decide to approach and start shouting for help.");
                         Console.WriteLine("The person notices you and focuses you with the flashlight. Right after that, they start shooting their gun at you.");
                         Console.WriteLine("Luckily for you, the visually impaired person missed all their shots and had to reload their gun again.");
                         Console.WriteLine("When the person is ready to shoot, they aim at you and when they're about to pull the trigger, out of nowhere Elise shouts \"STOP!\"");
@@ -1831,7 +1831,7 @@ namespace MasterProgram
                         Console.WriteLine("After this, they take you to a refugee camp.");
                         Console.ReadLine();
                         Console.Clear();
-                        Console.WriteLine("Elise starts to talk about how they establihed themselves here a week ago and that the army will soon come to evacuate everyone");
+                        Console.WriteLine("Elise starts to talk about how they establihed themselves here a week ago and that the army will evacuate everyone soon");
                         Console.WriteLine("On the other hand, she cheerfuly tells you that some scientists from the Uni have been able to find a cure.");
                         Console.WriteLine("Then, she explains that they thought they had lost you, and that David almost gets killed by Krissi as well when he arrived some hours ago.");
                         Console.WriteLine("Sadly, she also tells you that the only one who couldn't make it was Paul.");
