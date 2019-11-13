@@ -3,12 +3,12 @@ Coordinates
 0
 1
 Inventory
-phone
-photo
-cv
-documents
-keys
-charger
+
+
+
+
+
+
 
 
 
@@ -24,7 +24,7 @@ phone
 
 
 
-LOCATION 101 OUTSIDE D201
+LOCATION 101 STAIRS SECOND FLOOR
 
 
 
@@ -90,7 +90,7 @@ LOCATION 100 FIRST FLOOR
 
 
 
-LOCATION 110 OUTSIDE OF D BLOCK
+LOCATION 110 OUTSIDE OF D BLOCK NORTH
 
 
 
@@ -101,7 +101,8 @@ LOCATION 110 OUTSIDE OF D BLOCK
 
 
 
-LOCATION 120
+LOCATION 120 HUB
+v
 
 
 
@@ -111,8 +112,7 @@ LOCATION 120
 
 
 
-
-LOCATION 1n10 South Exit
+LOCATION 1n10 OUTSIDE OF D BLOCK SOUTH
 
 
 
@@ -129,6 +129,369 @@ LOCATION 202 SERVER ROOM
 
 
 
+
+
+
+
+
+LOCATION 0n20 HARBOUR TERRACE STREET
+
+
+
+
+
+
+
+
+
+
+LOCATION 1n20 HARBOUR TERRACE STREET
+
+
+
+
+
+
+
+
+
+
+LOCATION 2n20 HARBOUR TERRACE STREET
+
+
+
+
+
+
+
+
+
+
+LOCATION 1n30 APPROACHING MAANAKI's CAR PARK
+
+
+
+
+
+
+
+
+
+
+LOCATION 1n40 DARK ALLEY
+sledgehammer
+
+
+
+
+
+
+
+
+
+LOCATION 2n40 MAANAKI ENTRANCE
+
+
+
+
+
+
+
+
+
+
+LOCATION 2n41 MAANAKI SECOND FLOOR
+
+
+
+
+
+
+
+
+
+
+LOCATION 3n41 BECOMING LOUDER
+
+
+
+
+
+
+
+
+
+
+LOCATION 4n41 MYSTERIOUS SOUNDS
+
+
+
+
+
+
+
+
+
+
+LOCATION 2n51 GETTING WARMER
+
+
+
+
+
+
+
+
+
+
+LOCATION 3n51 PUDDLE OF WATER
+
+
+
+
+
+
+
+
+
+
+LOCATION 4n51 MAANAKI SECOND FLOOR
+
+
+
+
+
+
+
+
+
+
+LOCATION 2n61 COUNTER
+
+
+
+
+
+
+
+
+
+
+LOCATION 3n61 COUNTER
+
+
+
+
+
+
+
+
+
+
+LOCATION 4n61 V DRINK
+food
+
+
+
+
+
+
+
+
+
+LOCATION n210 LIBRARY ENTRANCE
+
+
+
+
+
+
+
+
+
+
+LOCATION n211 LIBRARY SECOND FLOOR
+
+
+
+
+
+
+
+
+
+
+LOCATION n311 LIBRARY SECOND FLOOR
+
+
+
+
+
+
+
+
+
+
+LOCATION n201 LIBRARY SECOND FLOOR
+
+
+
+
+
+
+
+
+
+
+LOCATION n301 LIBRARY SECOND FLOOR
+
+
+
+
+
+
+
+
+
+
+LOCATION n321 LIBRARY SECOND FLOOR STAIRS
+
+
+
+
+
+
+
+
+
+
+LOCATION n322 LIBRARY THIRD FLOOR
+
+
+
+
+
+
+
+
+
+
+LOCATION n332 KEYCARD
+keycard
+
+
+
+
+
+
+
+
+
+LOCATION 130 FORTH STREET
+
+
+
+
+
+
+
+
+
+
+LOCATION 030 FORTH STREET
+
+
+
+
+
+
+
+
+
+
+LOCATION n130 UNION STREET
+
+
+
+
+
+
+
+
+
+
+LOCATION n120 UNION STREET
+
+
+
+
+
+
+
+
+
+
+LOCATION n110 UNION STREET
+
+
+
+
+
+
+
+
+
+
+LOCATION n100 UNION STREET
+
+
+
+
+
+
+
+
+
+
+LOCATION n1n10 UNION STREET
+
+
+
+
+
+
+
+
+
+
+LOCATION n1n20 UNION STREET
+
+
+
+
+
+
+
+
+
+
+LOCATION n140 UNIVERSITY GATE
+
+
+
+
+
+
+
+
+
+
+LOCATION n150 UNIVERSITY CAMPUS
+
+
+
+
+Line 494
 
 
 
