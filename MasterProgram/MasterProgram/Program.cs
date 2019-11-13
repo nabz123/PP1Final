@@ -16,7 +16,7 @@ namespace MasterProgram
         public static bool inventoryCheck = false; //Auxiliar boolean to check whether the inventory is empty or not
         public static string separator; //Helps to orginize the text files
 
-        public static int food_level_current = 10; //FOOD COUNTER
+        public static int food_level_current = 100; //FOOD COUNTER
 
         //COORDINATES
         public static int x = 0, y = 0, z = 0; 
@@ -34,12 +34,21 @@ namespace MasterProgram
         public static string[] location1n12 = new string[10];
         public static string[] location100 = new string[10];
         public static string[] location110 = new string[10];
-        public static string[] location120 = new string[10];
+        public static string[] location120 = new string[10];  //
         public static string[] location1n10 = new string[10];
         public static string[] location202 = new string[10];
 
+        //
+        public static string[] location130 = new string[10];
+        public static string[] location030 = new string[10];
+        public static string[] locationn130 = new string[10];
+        public static string[] locationn140 = new string[10];
+        public static string[] locationn150 = new string[10];
+        //
+
         //LOCATION BOOLEANS
-        public static bool Bill = false, Francisco = false, Mitchell = false, Nabeel = false; // These values decide the route of the game
+        public static string name; //Player's name
+        public static bool closeGate = false, savedYourself = false, savedPaul = false, openGate = false; // These values decide the route of the game
         public static bool introduction = true;
         public static bool messageSeen = false;
         public static bool phoneCharged = false;
@@ -51,8 +60,23 @@ namespace MasterProgram
         public static bool knowingWhatIsGoingOn = false;
         public static bool firstTimeServerRoom = true;
         public static bool serverRoomLoop = true;
+
+        //
         public static bool foodCurrent = false; //NEW  BOOLEAN
         public static bool firstTimeGoingOutDBlock = true; // NEW BOOLEAN
+        public static bool firstTimeUni = true;
+        public static bool rescuePaul = false;
+        public static bool gateLoop = true;
+        public static bool beforeUniCampus = true;
+        public static bool rightAfterUniCampus = false;
+        public static bool afterPaulQuest = false;
+        public static bool davidFirstFloor = false;
+        public static bool paulRaid = false;
+        public static bool d201Decision = false;
+        public static bool d201Loop = true;
+        public static bool getPaul = false;
+        public static bool lockedPaul = false;
+        public static bool afterSavingPaul = true;
 
 
         //METHODS
@@ -1144,7 +1168,7 @@ namespace MasterProgram
                     break;
             }
         }
-        public static void Help(string answer)
+        public static void Help(string answer) //DISPLAYS FOOD COUNTER
         {
 
             switch (answer)
@@ -1179,6 +1203,32 @@ namespace MasterProgram
             else if (randomNumber == 5) Console.WriteLine("What do you mean?");
             else if (randomNumber == 6) Console.WriteLine("What are you talking about?");
         }
+        public static void Name(string answer)
+        {
+            switch (answer)
+            {
+                case "name":
+                    Console.WriteLine(name);
+                    anythingElseCondition = false;
+                    break;
+            }
+        }
+        public static void Omnipresent(string answer)
+        {
+            switch (answer)
+            {
+                case "omnipresent":
+                    Console.Write("x coordinate: ");
+                    x = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("y coordinate: ");
+                    y = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("z coordinate: ");
+                    z = Convert.ToInt32(Console.ReadLine());
+                    secondWhileCondition = false;
+                    anythingElseCondition = false;
+                    break;
+            }
+        }
         public static void CollectionOfMethods(string answer, string[] location)
         {
             answer = answer.ToLower(); // This instruction is important, it converts the input into lower case so that the rest of the methods can work with only lowercase inputs
@@ -1195,6 +1245,8 @@ namespace MasterProgram
             DisplayInventory(answer);
             SpecialInputs(answer);
             SaveGame(answer);
+            Name(answer);
+            Omnipresent(answer);
             WAT(answer);
         }
         public static void CommandAnalysis(string[] location)
@@ -1227,6 +1279,10 @@ namespace MasterProgram
             //INSTRUCTIONS
             Console.WriteLine("SEVERAL LINES WITH INSTRUCTIONS IN THIS PART");
 
+            //NAME
+            Console.Write("I am an average BIT student whose name is: ");
+            name = Console.ReadLine();
+
             Console.Write("Press enter to start:");
             Console.ReadLine();
             Console.Clear();
@@ -1238,15 +1294,106 @@ namespace MasterProgram
                 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 if (x == 0 && y == 0 && z == 1) //LOCATION 001 D201
                 {
-                    SavingCoordinates();
                     if (introduction)
                     {
+                        SavingCoordinates();
+                        introduction = false;
                         Console.WriteLine("You wake up in the middle of D201, looking bewildered and unable to remember anything at all. Outside, a cold and dark night lies upon Dunedin.");
                         Console.WriteLine("After a while, you make up your mind and decide to find out what is going on and more importantly, who you are...");
-                        introduction = false;
+                        CommandAnalysis(location001);
                     }
-                    else Console.WriteLine("You are in D201, the classroom you once loved.");
-                    CommandAnalysis(location001);
+                    else if ((savingX == 1 && savingY == 0 && savingZ == 1) && lockedPaul)
+                    {
+                        Console.WriteLine("You shouldn't go back there, Paul is there and he is watching you through the door's glass.");
+                        LoadSavedCoordinates();
+                    }
+                    else if (d201Decision)
+                    {
+                        d201Decision = false;
+                        SavingCoordinates();
+                        while (d201Loop)
+                        {
+                            Console.WriteLine("\nYou are in D201, you locked the door, through the window you can see Paul attempting to get inside to eat your brain and read your \"Tech News\".");
+                            Console.WriteLine("After a while, you look out the window, everything is calm. Nevertheless, you start to feel the effects of the virus.");
+                            Console.WriteLine("You are slowly turning into a zombie!");
+                            Console.WriteLine("You have two options:");
+                            Console.WriteLine("do you spend the cure on you and \"save yourself\" or you \"save Paul\"?");
+                            string answer2 = Console.ReadLine();
+                            if (answer2 != "")
+                            {
+                                answer2 = answer2.ToLower();
+                                switch (answer2)
+                                {
+                                    case "myself":
+                                    case "save myself":
+                                    case "save me":
+                                    case "me":
+                                    case "save yourself":
+                                    case "yourself":
+                                        savedYourself = true;  //Ending Decision
+                                        d201Loop = false;
+                                        LoadSavedCoordinates();
+                                        break;
+                                    case "paul":
+                                    case "save paul":
+                                        savedPaul = true;  //Ending Decision
+                                        d201Loop = false;
+                                        LoadSavedCoordinates();
+                                        break;
+                                    default:
+                                        Console.WriteLine("Please enter a valid answer");
+                                        break;
+                                }
+                            }
+                            else Console.WriteLine("Please enter a valid answer");
+                        }
+                    }
+                    else if (savedYourself)
+                    {
+                        Console.WriteLine("\nYou take the syringe out of your inventory, and without thinking it twice, you inject the green suerum into your bloodstream.");
+                        Console.WriteLine("Immediately after, you begin to notice and feel its effects.");
+                        Console.WriteLine("After a while, you feel better than ever in fact you feel super human!.");
+                        Console.WriteLine("You unlock the door and proceed to get Paul.");
+                        getPaul = true;
+                        //Adding the empty syringe to the inventory
+                        for (int i = 0; i < inventory.Length; i++)
+                        {
+                            if (inventory[i] == "syringe(cure)")
+                            {
+                                inventory[i] = "syringe(empty)";
+                                break;
+                            }
+                        }
+                        CommandAnalysis(location001);
+                    }
+                    else if (savedPaul && afterSavingPaul)
+                    {
+                        afterSavingPaul = false;
+                        Console.WriteLine("\nYou take the syringe out of your inventory, you stare at the green suerum and start meditating about your situation.");
+                        Console.WriteLine("You think that perhaps if you don't save Paul you will never be able to find out who you are.");
+                        Console.WriteLine("What's more, if you end up turning into a zombie, it wouldn't matter because you think that having no memories is the same as being dead.");
+                        Console.WriteLine("Suddenly a strong noise kills your reflection time, you see Paul trying to tackle the door down.");
+                        Console.WriteLine("Then you prepare the syringe and unlock the door. Paul tackles the door and after the impact, he falls over.");
+                        Console.WriteLine("You jump on him and inject the suerum. Right away, you start seeing how quicly he recovers his human form.");
+                        Console.WriteLine("You are not that strong to carry Paul on your own, so you decide to drag him instead.");
+                        //Adding the empty syringe to the inventory
+                        for (int i = 0; i < inventory.Length; i++)
+                        {
+                            if (inventory[i] == "syringe(cure)")
+                            {
+                                inventory[i] = "syringe(empty)";
+                                break;
+                            }
+                        }
+                        CommandAnalysis(location001);
+                    }
+                    else
+                    {
+                        SavingCoordinates();
+                        Console.WriteLine("You are in D201, the classroom you once loved.");
+                        CommandAnalysis(location001);
+
+                    }
                 } //LOCATION 001 D201
                 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 else if (x == 1 && y == 0 && z == 1) //LOCATION 101 STAIRS SECOND FLOOR
@@ -1254,11 +1401,36 @@ namespace MasterProgram
                     ZombieAttack();  // ZOMBIE METHOD
                     if (zombieBoolean) break; // This conditional terminates the current loop and exits the game
 
-                    SavingCoordinates();
-                    Console.WriteLine("You spot a weak light coming out of one the rooms.");
-                    Console.WriteLine("You are in the second floor.");
-                    Console.WriteLine("You can see the building stairs from here.");
-                    CommandAnalysis(location101);
+                    if (getPaul)
+                    {
+                        SavingCoordinates();
+                        getPaul = false;
+                        lockedPaul= true;
+                        Console.WriteLine("After stepping out of D201 you no longer feel super human when you see Paul frenetically running towards you.");
+                        Console.WriteLine("You enter D201 once more time and close the door without locking it.");
+                        Console.WriteLine("Paul tackles the door and after the impact, he falls over.");
+                        Console.WriteLine("You take this chance to lock him in D201");
+                        LoadSavedCoordinates();
+                    }
+                    else if (paulRaid)
+                    {
+                        paulRaid = false;
+                        d201Decision = true;
+                        Console.WriteLine("Before continuing any further, you kneel down and start to pray to gather enough guts for what's to come.");
+                        Console.WriteLine("However, \"REALITY HITS YOU HARD BRO\", and Paul who was lurking from the darkness, jumps on you like some sort of hungry tiger.");
+                        Console.WriteLine("He bites your kneck, and immidiatly after, he goes insane by the taste of your blood.");
+                        Console.WriteLine("You manage to articulate some words and say to Paul that you have the latest \"Tech News\" on your phone.");
+                        Console.WriteLine("Paul gets petrified for a moment and you take this opportunity to break free and run inside D201 and quickly shut the door.");
+                        x = 0;  y = 0; z = 1;
+                    }
+                    else
+                    {
+                        SavingCoordinates();
+                        Console.WriteLine("You spot a weak light coming out of one the rooms.");
+                        Console.WriteLine("You are in the second floor.");
+                        Console.WriteLine("You can see the building stairs from here.");
+                        CommandAnalysis(location101);
+                    }
                 }//LOCATION 101 STAIRS SECOND FLOOR
                 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 else if (x == 1 && y == -1 && z == 1) //LOCATION 1n11 COMMON ROOM
@@ -1367,12 +1539,25 @@ namespace MasterProgram
                 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 else if (x == 1 && y == 0 && z == 0) //LOCATION 100 FIRST FLOOR
                 {
-                    if (!serverRoomLoop)
+                    if (davidFirstFloor) //SERVER ROOM HAS BEEN ACTIVATED
                     {
+                        davidFirstFloor = false;
                         SavingCoordinates();
                         Console.WriteLine("Someone is passing by looking quite... “chillaxed”.");
                         Console.WriteLine("You approach him and ask him for help. He interrupts you and tells you that he has been working on a super exciting AI project for almost a week non-stop, and now that the servers are down for some uncommon and strange reason, he is gonna take a break.");
                         Console.WriteLine("You try to tell him if he knows what is going on, but he walks away saying that he cannot wait to tell everyone what he’s been up to by tomorrow morning.");
+                        CommandAnalysis(location100);
+                    }
+                    else if (rescuePaul)
+                    {
+                        rescuePaul = false;
+                        paulRaid = true;
+                        SavingCoordinates();
+                        Console.WriteLine("You enter the D Block and start looking for Paul.");
+                        Console.WriteLine("You can hear really bizarre cries coming from the floors above.");
+                        Console.WriteLine("You are in the first floor.");
+                        Console.WriteLine("You can see the building stairs from here. ");
+                        Console.WriteLine("You notice that both the southern and northern exits are open.");
                         CommandAnalysis(location100);
                     }
                     else
@@ -1400,6 +1585,8 @@ namespace MasterProgram
                             Console.WriteLine("You are outside the D block, the hostile atmosphere chills your blood.");
                             Console.WriteLine("It's been a while since the last time you ate something. You are starting to feel extremely weak.");
                             Console.WriteLine("If you don't find something to eat soon, you may die.");
+
+                            //ACTIVATES FOOD COUNT
                             if (firstTimeGoingOutDBlock)
                             {
                                 firstTimeGoingOutDBlock = false;
@@ -1416,16 +1603,8 @@ namespace MasterProgram
                         }
                     }
                     foodCounter();
-
                 }//LOCATION 110 OUTSIDE OF D BLOCK NORTH
                 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                else if (x == 1 && y == 2 && z == 0) //LOCATION 120
-                {
-                    SavingCoordinates();
-                    Console.WriteLine("You are in location 120");
-                    CommandAnalysis(location100);
-                }//LOCATION 120
-                 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 else if (x == 1 && y == -1 && z == 0) //LOCATION 1n10 OUTSIDE OF D BLOCK SOUTH
                 {
                     if (savingX == 1 && savingY == -1 && savingZ == 1) //The location you are comming from
@@ -1458,65 +1637,221 @@ namespace MasterProgram
                 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 else if (x == 2 && y == 0 && z == 2) //LOCATION 202 SERVER ROOM
                 {
-                    if (!serverRoomLoop)
+                    if (firstTimeServerRoom)
+                    {
+                        firstTimeServerRoom = false;
+                        davidFirstFloor = true;
+                        while (serverRoomLoop)
+                        {
+                            Console.WriteLine("You enter the server room and immediately notice that everything is working somehow. Unfortunately due to your amnesia, you have a hard time recalling your BIT learnings. Thus, while trying to bring electricity back to the building, you end up mixing up the servers with generators and setting everything on fire.");
+                            Console.WriteLine("You have two options: using an extinguisher or trying to get out as fast as you can.");
+                            Console.Write("\n>");
+                            string answer = Console.ReadLine();
+                            answer = answer.ToLower();
+
+                            //USE EXTINGUISHER
+                            if (answer == "extinguisher" || answer == "use extinguisher" || answer == "extinguish")
+                            {
+                                serverRoomLoop = false;
+                                Console.WriteLine("Miraculously, you remember one answer from your NetAcademy-chapter-exam questions and you take the extinguisher, so you “aim at the base of the flame, squeeze the lever, and sweep from side to side”.");
+                                Console.WriteLine("This sophisticated technique allows you to get rid of the fire and save your ass as a result.\n");
+                            }
+                            else if (answer == "run" || answer == "get out" || answer == "run out" || answer == "escape" || answer == "leave")
+                            {
+                                Console.WriteLine("You decide to run out of the server room but the smoke obstructs your vision and you crash into the door that you forgot you had closed before. This knocks you out and you die burnt inside the server room.");
+                                serverRoomLoop = false;
+                                firstWhileCondition = false;
+                                Console.ReadLine();
+                                Console.Clear();
+                                Console.WriteLine("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\tYOU DIED. GAME OVER");
+                                Console.ReadLine();
+                            }
+                            else
+                            {
+                                Console.WriteLine("Please enter a valid decision.");
+                            }
+                        }
+                    }
+                    else
                     {
                         Console.WriteLine("You can't go this way, the room is totally destroyed.\n");
                         LoadSavedCoordinates();
                     }
-                    while (serverRoomLoop)
-                    {
-                        Console.WriteLine("You enter the server room and immediately notice that everything is working somehow. Unfortunately due to your amnesia, you have a hard time recalling your BIT learnings. Thus, while trying to bring electricity back to the building, you end up mixing up the servers with generators and setting everything on fire.");
-                        Console.WriteLine("You have two options: using an extinguisher or trying to get out as fast as you can.");
-                        Console.Write("\n>");
-                        string answer = Console.ReadLine();
-                        answer = answer.ToLower();
-
-                        //USE EXTINGUISHER
-                        if (answer == "extinguisher" || answer == "use extinguisher" || answer == "extinguish")
-                        {
-                            serverRoomLoop = false;
-                            Console.WriteLine("Miraculously, you remember one answer from your NetAcademy-chapter-exam questions and you take the extinguisher, so you “aim at the base of the flame, squeeze the lever, and sweep from side to side”.");
-                            Console.WriteLine("This sophisticated technique allows you to get rid of the fire and save your ass as a result.\n");
-                        }
-                        else if (answer == "run" || answer == "get out" || answer == "run out" || answer == "escape" || answer == "leave")
-                        {
-                            Console.WriteLine("You decide to run out of the server room but the smoke obstructs your vision and you crash into the door that you forgot you had closed before. This knocks you out and you die burnt inside the server room.");
-                            serverRoomLoop = false;
-                            firstWhileCondition = false;
-                            Console.ReadLine();
-                            Console.Clear();
-                            Console.WriteLine("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\tYOU DIED. GAME OVER");
-                            Console.ReadLine();
-                        }
-                        else
-                        {
-                            Console.WriteLine("Please enter a valid decision.");
-                        }
-                    }
                     x = 1; y = 0; z = 2; //STAIRS THIRD FLOOR
                 }//LOCATION 202 SERVER ROOM
 
+                //Final Game
+                else if (x == 1 && y == 2 && z == 0) //LOCATION 120
+                {
+                    SavingCoordinates();
+                    Console.WriteLine("1,2,0");
+                    CommandAnalysis(location120);
+                }//LOCATION 120
+                 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                else if (x == 1 && y == 3 && z == 0) //LOCATION 120
+                {
+                    SavingCoordinates();
+                    Console.WriteLine("1,3,0");
+                    CommandAnalysis(location130);
+                }//LOCATION 130
+                 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                else if (x == 0 && y == 3 && z == 0) //LOCATION 120
+                {
+                    SavingCoordinates();
+                    Console.WriteLine("0,3,0");
+                    CommandAnalysis(location030);
+                }//LOCATION 030
+                 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                else if (x == -1 && y == 3 && z == 0) //LOCATION -130
+                {
+                    SavingCoordinates();
+                    Console.WriteLine("-1,3,0");
+                    CommandAnalysis(locationn130);
+                }//LOCATION n130
+                 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                else if (x == -1 && y == 4 && z == 0) //LOCATION n140 UNIVERSITY GATE
+                {
+                    SavingCoordinates();
+                    if (beforeUniCampus)
+                    {
+                        if (inventory.Contains("keycard"))
+                        {
+
+                        }
+                        beforeUniCampus = false;  // These two booleans should be activated after you have the keycard
+                        rightAfterUniCampus = true; 
+                    }
+                    else if (rightAfterUniCampus) // if firstTimeUni is false
+                    {
+                        rightAfterUniCampus = false;
+                        afterPaulQuest = true;
+                        while (gateLoop)
+                        {
+                            Console.WriteLine("\nYou come out of the University campus and wonder whether to close the gate or not.");
+                            Console.Write("Do you close the gate? (Y/N): ");
+                            string answer2 = Console.ReadLine();
+                            if (answer2 != "")
+                            {
+                                answer2 = answer2.ToLower();
+                                switch (answer2[0])
+                                {
+                                    case 'y':
+                                        closeGate = true;  //Ending Decision
+                                        gateLoop = false;
+                                        break;
+                                    case 'n':
+                                        gateLoop = false;  //Ending Decision
+                                        break;
+                                    default:
+                                        Console.WriteLine("Please enter a valid answer");
+                                        break;
+                                }
+                            }
+                            else Console.WriteLine("Please enter a valid answer");
+                        }
+                    }
+                    else if (closeGate && savedPaul)
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Miraculously, you and Paul arrive at the University Gate, you have to open the gate in order to enter.");
+                        Console.WriteLine("You manage to close the gate again and fall exhausted to the floor, then you pass out.");
+                        Console.WriteLine("When you wake up, you see almost all the BIT community crowded inside the hospital room you are in, and a bunch of presents for you.");
+                        Console.WriteLine("Then you turn your head to the left and you see Paul on the other bed smiling at you. He then expresses his gratitude to you.");
+                        Console.WriteLine("Suddenly you remember that you were about to become a zombie, so you quickly see your arms and hands, and everything looks in order.");
+                        Console.WriteLine("When Elise notices how concern you look, she proceeds to explain. She tells you that the scientists were able to develop more suerum,");
+                        Console.WriteLine("and that after you passed out at the gate they took you into the camp, and hours later the army came to rescue everyone.");
+                        Console.WriteLine("You {0} have survived the Otago Apocalypse and you great heart managed to rescue everyone. Congratulations!",name);
+                        Console.ReadLine();
+                        firstWhileCondition = false;
+                    }
+                    else if (closeGate && savedYourself)
+                    {
+                        Console.WriteLine("You arrive at the University Gate, you have to open the gate in order to enter.");
+                        Console.WriteLine("You close the gate again, and head towards the Refugee Camp.");
+                        Console.WriteLine("Krissi focuses you with her flashlight and aims at you with her gun. After verifying that it is you, she let's you in.");
+                        Console.WriteLine("When you enter the camp, Elise comes up to you and asks where Paul is");
+                        Console.WriteLine("You tell her that you couldn't find him. Then she starts to cry and asks you to return the suerum because now they need to save Joy who was bitten by a zombie dog.");
+                        Console.WriteLine("You lie to Elise telling her that you lost the suerum, then she starts to freak out because that was the only cure there was.");
+                        Console.WriteLine("You say that you feel sorry for Paul and Joy, and head to find something to eat.");
+                        Console.WriteLine("Hours later the army comes in and rescues everyone.");
+                        Console.WriteLine("You {0} have survived the Otago Apocalypse, however, you are intrinsically selfish. Neutral Ending", name);
+                        Console.ReadLine();
+                        firstWhileCondition = false;
+                    }
+                    else if (openGate && savedPaul)
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Miraculously, you and Paul arrive at the University Gate, you don't have to open the gate in order to enter because you left it open.");
+                        Console.WriteLine("You manage to close the gate again and fall exhausted to the floor, then you pass out.");
+                        Console.WriteLine("When you wake up, you feel like eating brains so bad. Then you look up and contemplate a horde of zombies inside the University Campus.");
+                        Console.WriteLine("You barely have lucid thoughts by now. You look down and see a corpse on the ground. You swear that body had a head before you passed out.");
+                        Console.WriteLine("You realize that all the zombies that walk past you ignore you. Then, you try to hurry up and get to the Refugee Camp desperately to find Salvation");
+                        Console.WriteLine("When you reach the camp, all you find is hell, apparently the zombies have completely taken over the place.");
+                        Console.WriteLine("You blame yourself for not having closed the gates and your consciousness fades away.");
+                        Console.WriteLine("You {0} didn't survive the Otago Apocalypse and got everyone killed. Such a Tragedy. Bad Ending.", name);
+                        Console.ReadLine();
+                        firstWhileCondition = false;
+                    }
+                    else if (openGate && savedYourself)
+                    {
+                        Console.WriteLine("You arrive at the University Gate.");
+                        Console.WriteLine("You see a huge horde of zombies making their way into the University Campus");
+                        Console.WriteLine("You then realize having left the gates open was not a really good idea at all.");
+                        Console.WriteLine("All you can hear are the screams of horror of what's happening");
+                        Console.WriteLine("You can't stand the guilt of being responsible for killing everyone, and decide that the easiest way out is to end it right here.");
+                        Console.WriteLine("With no sanity left in your mind, you run into the horde of zombies to never see the light again.");
+                        Console.WriteLine("You {0} didn't survive the Otago Apocalypse and got everyone killed, you are intrinsically selfish. Bad Ending.", name);
+                        Console.ReadLine();
+                        firstWhileCondition = false;
+                    }
+                    else
+                    {
+
+                    }
+                    CommandAnalysis(locationn140);
+                }//LOCATION n140 UNIVERSITY GATE
+                 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                else if (x == -1 && y == 5 && z == 0) //LOCATION n150 UNIVERSITY CAMPUS
+                {
+                    if (firstTimeUni)
+                    {
+                        firstTimeUni = false;
+                        Console.Clear();
+                        Console.WriteLine("You come inside the University campus making sure you close the gate again.");
+                        Console.WriteLine("On the distance you see someone with a flashlight, then, you decide to approach and start shouting for help.");
+                        Console.WriteLine("The person notices you and focuses you with the flashlight. Right after that, they start shooting their gun at you.");
+                        Console.WriteLine("Luckily for you, the visually impaired person missed all their shots and had to reload their gun again.");
+                        Console.WriteLine("When the person is ready to shoot, they aim at you and when they're about to pull the trigger, out of nowhere Elise shouts \"STOP!\"");
+                        Console.WriteLine("Elise tells Krissi that she has found her glasses and that you are not a zombie, in fact you are {0}, one of the BIT students",name);
+                        Console.WriteLine("You hear your name and immediately realize that your parents certainly had a really bad taste for names, and probably disgraced your previous life.");
+                        Console.WriteLine("After this, they take you to a refugee camp.");
+                        Console.ReadLine();
+                        Console.Clear();
+                        Console.WriteLine("Elise starts to talk about how they establihed themselves here a week ago and that the army will soon come to evacuate everyone");
+                        Console.WriteLine("On the other hand, she cheerfuly tells you that some scientists from the Uni have been able to find a cure.");
+                        Console.WriteLine("Then, she explains that they thought they had lost you, and that David almost gets killed by Krissi as well when he arrived some hours ago.");
+                        Console.WriteLine("Sadly, she also tells you that the only one who couldn't make it was Paul.");
+                        Console.WriteLine("You then tell Elise that you think Paul has become a zombie and wanders around in the D Block.");
+                        Console.WriteLine("When she listens to that, in a matter of seconds she hands you a syringe with the last cure that they have and begs you to go and rescue Paul.");
+                        Console.WriteLine("Persuaded by her professional selection of words you embark yourself to the Otago Polytechnic once again.");
+                        rescuePaul = true;
+                        //Adding the syringe to the inventory
+                        for (int i = 0; i < inventory.Length; i++)
+                        {
+                            if (inventory[i] == "")
+                            {
+                                inventory[i] = "syringe(cure)";
+                                break;
+                            }
+                        }
+                        LoadSavedCoordinates();
+                    }
+                }//LOCATION n150 UNIVERSITY CAMPUS
+                 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                
                 //RED ZONES
                 else if (RedZoneCoordinates.Contains($"{x},{y},{z}")) { Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("You can't go this way\n"); LoadSavedCoordinates(); Console.ForegroundColor = ConsoleColor.Gray; }
-            }
-        }
-        public static void decisionRoutes()
-        {
-            if (Bill && Mitchell)
-            {
-
-            }
-            else if (Bill && Francisco)
-            {
-
-            }
-            else if (Nabeel && Mitchell)
-            {
-
-            }
-            else if (Nabeel && Francisco)
-            {
-
             }
         }
         static void Main()
